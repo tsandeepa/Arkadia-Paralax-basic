@@ -8,7 +8,12 @@ let clouds = document.getElementById('clouds')
 let sc_val = document.getElementById('sc-val')
 
 let frame01 = document.getElementById('frame-01')
+
+// frame 02--------------------------------------
+
 let frame02 = document.getElementById('frame-02')
+
+
 
 let btn_2 = document.getElementById('btn_2')
 
