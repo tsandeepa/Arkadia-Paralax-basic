@@ -10,6 +10,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+header {
+  position: fixed;
+  z-index: 9000;
+  padding: 10px 20px;
+}
+
 section {
   position: relative;
   width: 100%;
@@ -43,6 +49,7 @@ section img {
 #sc-val {
   position: fixed;
   z-index: 99999;
+  bottom: 0;
 }
 
 .hide {
@@ -74,13 +81,12 @@ section img {
 .text-layer h2 {
   font-weight: 500;
   font-size: 5em;
-  color: #3E374D;
 }
 
 .text-layer p {
-  font-size: 20px;
-  color: #3E374D;
+  font-size: 19px;
   line-height: 1.5;
   margin-top: 20px;
+  font-weight: 300;
 }
 /*# sourceMappingURL=main.css.map */
