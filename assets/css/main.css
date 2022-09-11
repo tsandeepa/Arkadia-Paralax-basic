@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 * {
   margin: 0;
   -webkit-box-sizing: 0;
@@ -5,7 +6,8 @@
 }
 
 body {
-  height: 3500px;
+  height: 4500px;
+  font-family: 'Roboto', sans-serif;
 }
 
 section {
@@ -13,8 +15,8 @@ section {
   width: 100%;
   height: 100vh;
   position: fixed;
-  -webkit-transition: all 1.5s;
-  transition: all 1.5s;
+  -webkit-transition: opacity 600ms linear;
+  transition: opacity 600ms linear;
   opacity: 1;
 }
 
@@ -59,5 +61,26 @@ section img {
 
 .navigation ul {
   list-style: none;
+}
+
+.text-layer {
+  position: absolute;
+  z-index: 9000;
+  max-width: 400px;
+  top: 100px;
+  left: 100px;
+}
+
+.text-layer h2 {
+  font-weight: 500;
+  font-size: 5em;
+  color: #3E374D;
+}
+
+.text-layer p {
+  font-size: 20px;
+  color: #3E374D;
+  line-height: 1.5;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=main.css.map */
