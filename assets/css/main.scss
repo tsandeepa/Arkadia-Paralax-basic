@@ -7,7 +7,7 @@
 
 body {
   // background: #3e3e3e;
-  height: 4500px;
+  height: 5500px;
   // overflow: hidden;
   font-family: 'Roboto', sans-serif;
 
@@ -27,6 +27,18 @@ section {
   transition: opacity 600ms linear;
   opacity: 1;
 }
+
+.logo-ph {
+  background: #cfc;
+
+  .logo-text {
+    position: relative !important;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
 
 #frame-01 {
   z-index: 10;

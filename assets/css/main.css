@@ -6,7 +6,7 @@
 }
 
 body {
-  height: 4500px;
+  height: 5500px;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -24,6 +24,17 @@ section {
   -webkit-transition: opacity 600ms linear;
   transition: opacity 600ms linear;
   opacity: 1;
+}
+
+.logo-ph {
+  background: #cfc;
+}
+
+.logo-ph .logo-text {
+  position: relative !important;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
 }
 
 #frame-01 {
