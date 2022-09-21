@@ -141,7 +141,8 @@ fr_04.style.height = `calc(${frameSwap_4}px - ${frameSwap_3}px)`
 window.addEventListener('scroll', () => {
   let scroll_y = window.scrollY;
   // console.log(scroll_y);
-  // prgBar.style.height = `calc((${scroll_y}/${bodyHeight}))px`
+  // prgBar.style.height = `calc(100% - (${scroll_y} / ${bodyHeight} * 100%))`
+  prgBar.style.height = `calc(${scroll_y} / (${bodyHeight} - ${windowHeight} ) * 100%)`
 
 
   if (scroll_y < frameSwap_1) {

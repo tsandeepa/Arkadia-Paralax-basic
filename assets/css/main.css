@@ -75,27 +75,6 @@ section img {
   opacity: 0;
 }
 
-.navigation {
-  position: fixed;
-  z-index: 9000;
-  padding: 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 0;
-}
-
-.navigation .prg-bar {
-  background: #cfc;
-  position: absolute;
-  height: 100%;
-  top: 0;
-}
-
-.navigation ul {
-  list-style: none;
-}
-
 .text-layer {
   position: absolute;
   z-index: 9000;
@@ -110,10 +89,10 @@ section img {
 }
 
 .text-layer p {
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.5;
   margin-top: 20px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .text-layer-center {
@@ -133,10 +112,39 @@ section img {
 }
 
 .text-layer-center p {
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.5;
   margin-top: 20px;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.navigation {
+  position: fixed;
+  z-index: 9000;
+  padding: 0 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+}
+
+.navigation .prg-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  border-radius: 20px;
+}
+
+.navigation .prg-bar::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #e837a7;
+  position: absolute;
+  bottom: 0;
+  right: 8px;
 }
 
 .navigation ul {
@@ -148,15 +156,37 @@ section img {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
+  list-style: none;
+  padding: 0;
 }
 
 .navigation ul li a {
   list-style: none;
   text-decoration: none;
-  background: #ccc;
+  background: #ffffffb3;
   padding: 10px;
   display: block;
-  border: 1px solid;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navigation::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background-color: white;
+  right: 12px;
 }
 
 .sec-nav {
