@@ -1,5 +1,9 @@
-//frame 01 -----------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  f1_logo_lg.classList.add('anim-fadeIn')
 
+});
+
+//frame 01 -----------------------------------------
 const windowHeight = window.innerHeight;
 const bodyHeight = document.querySelector('body').offsetHeight;
 const prgBar = document.querySelector('.prg-bar');
@@ -7,8 +11,11 @@ const prgBar = document.querySelector('.prg-bar');
 
 
 console.log(bodyHeight);
+// frame 01--------------------------------------
 
 let frame01 = document.getElementById('frame-01')
+//fade assets
+let f1_logo_lg = document.getElementById('f1_logo_lg')
 
 let bg1 = document.getElementById('bg1')
 let bg2 = document.getElementById('bg2')
@@ -93,6 +100,14 @@ let f5_Untitled_Artwork_13 = document.getElementById('f5_Untitled_Artwork_13')
 let f5_Untitled_Artwork_14 = document.getElementById('f5_Untitled_Artwork_14')
 let f5_Untitled_Artwork_15 = document.getElementById('f5_Untitled_Artwork_15')
 
+
+//frame 06 -----------------------------
+
+let frame06 = document.getElementById('frame-06')
+
+
+
+
 // frame resets
 const frameRevert = (frame_no) => {
   let frame_images = document.querySelectorAll(`#frame-${frame_no} img`)
@@ -117,13 +132,16 @@ let frame_02;
 let frame_03;
 let frame_04;
 let frame_05;
+let frame_06;
 
 let frameSwap_1 = 690;
 let frameSwap_2 = 2000;
 let frameSwap_3 = 3500;
 let frameSwap_4 = 5300;
+let frameSwap_5 = 7200;
 
-//navigation sections
+
+//navigation body section heights 
 
 const fr_01 = document.querySelector('.fr-01')
 fr_01.style.height = `calc(${windowHeight}px + ${frameSwap_1}px)`
@@ -136,6 +154,20 @@ fr_03.style.height = `calc(${frameSwap_3}px - ${frameSwap_2}px)`
 
 const fr_04 = document.querySelector('.fr-04')
 fr_04.style.height = `calc(${frameSwap_4}px - ${frameSwap_3}px)`
+
+const fr_05 = document.querySelector('.fr-05')
+fr_04.style.height = `calc(${frameSwap_5}px - ${frameSwap_4}px)`
+
+// const fr_06 = document.querySelector('.fr-06')
+// fr_04.style.height = `calc(${frameSwap_6}px - ${frameSwap_5}px)`
+
+
+
+
+
+//section fade in animations
+
+
 
 
 window.addEventListener('scroll', () => {
@@ -160,6 +192,11 @@ window.addEventListener('scroll', () => {
     frame_05 = false;
     frameRevert('02')
     // frameImgVisibility('01')
+
+    //Frame 01 - Fades
+    f1_logo_lg.classList.add('anim-fadeIn')
+
+
   } else if (scroll_y > frameSwap_1 && scroll_y < frameSwap_2) {
     //show FRAME 02 
     frame01.classList.add('hide')
@@ -174,6 +211,8 @@ window.addEventListener('scroll', () => {
     frame_05 = false;
     // frameRevert('01')
     // frameImgVisibility('02')
+    f1_logo_lg.classList.remove('anim-fadeIn')
+
   } else if (scroll_y > frameSwap_2 && scroll_y < frameSwap_3) {
     //show FRAME 03 
     frame01.classList.add('hide')
@@ -199,7 +238,7 @@ window.addEventListener('scroll', () => {
     frame_03 = false;
     frame_04 = true;
     frame_05 = false;
-  } else if (scroll_y > frameSwap_4) {
+  } else if (scroll_y > frameSwap_4 && scroll_y < frameSwap_5) {
     //show FRAME 05 
     frame01.classList.add('hide')
     frame02.classList.add('hide')
@@ -211,7 +250,23 @@ window.addEventListener('scroll', () => {
     frame_03 = false;
     frame_04 = false;
     frame_05 = true;
+  } else if (scroll_y > frameSwap_5) {
+    //show FRAME 06 
+    frame01.classList.add('hide')
+    frame02.classList.add('hide')
+    frame03.classList.add('hide')
+    frame04.classList.add('hide')
+    frame05.classList.add('hide')
+    frame06.classList.remove('hide')
+    frame_01 = false;
+    frame_02 = false;
+    frame_03 = false;
+    frame_04 = false;
+    frame_05 = false;
+    frame_06 = true;
   }
+
+
 
   sc_val.innerHTML = scroll_y;
   // bg1.style.top = scroll_y * 0.1 + 'px';

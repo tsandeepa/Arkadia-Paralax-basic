@@ -15,7 +15,7 @@ html {
 
 body {
   // background: #3e3e3e;
-  height: 7500px;
+  height: 10500px;
   // overflow: hidden;
   font-family: 'Roboto', sans-serif;
   background: rgb(229, 229, 229);
@@ -36,12 +36,15 @@ section {
   opacity: 1;
 }
 
-.logo-ph {
-  background: #cfc;
 
+
+.logo-ph {
+  transform: translate(0, 310px) scale(0.8);
+  opacity: 0;
+  transition: all 2.5s;
   .logo-text {
     position: relative !important;
-    max-width: 600px;
+    max-width: 33%;
     margin: 0 auto;
     display: block;
   }
@@ -126,25 +129,26 @@ section img {
   }
 }
 
-.navigation {}
-
 .navigation {
   position: fixed;
   z-index: 9000;
-  padding: 0 30px;
+  height: 40%;
+  padding: 3px 30px;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
-
+  // background: #686868;
+  overflow: hidden;
   .prg-bar {
-    // background: #d6d6d6;
+    background: #d6d6d6;
     position: absolute;
     top: 0;
-    right: 0;
-    width: 10px;
+    right: 50%;
+    width: 4px;
     border-radius: 20px;
+    transform: translate(50%, 20px);
     &::after {
-      content: '';
+      // content: '';
       width: 10px;
       height: 10px;
       border-radius: 10px;
@@ -153,29 +157,38 @@ section img {
       bottom: 0;
       right: 8px;
     }
-
   }
 
   ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 40px;
     list-style: none;
     padding: 0;
+    height: 100%;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
     li {
       a {
         list-style: none;
         text-decoration: none;
-        background: #ffffffb3;
         padding: 10px;
         display: block;
         width: 30px;
         height: 30px;
-        border-radius: 30px;
+        border-radius: 7px;
         // border: 2px solid #000;
         display: flex;
         align-items: center;
         justify-content: center;
+        background: #000;
+        color: #fff;
+        border: 2px solid;
+        transform: rotate(45deg);
+        span {
+          transform: rotate(-45deg);
+        }
       }
     }
   }
@@ -183,19 +196,135 @@ section img {
     content: '';
     position: absolute;
     height: 100%;
-    width: 2px;
-    background-color: rgb(255, 255, 255);
-    right: 12px;
+    width: 1px;
+    right: 50%;
+    transform: translate(1px, 0);
+    border-left: 1px dashed;
+    border-color: #e0e0e080;
   }
 }
 
 .sec-nav {
-  opacity: 0;
+  opacity: 1;
   background: #0000004a;
   position: absolute;
   z-index: 100;
-
+  color: #fff;
+  padding: 0 5px;
   >div {
-    border: 1px solid;
+    border-bottom: 1px solid;
+    height: 100vh;
+    border-bottom: 1px solid #fff;
+    .nav-f {
+      border-bottom: 1px solid;
+      height: 100vh;
+    }
   }
+}
+
+//Animations
+
+
+#f3_13_flashes {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#f5_Untitled_Artwork_13 {
+  animation: floatBaloons 18s infinite;
+}
+
+#f5_Untitled_Artwork_6 {
+  animation: floatBaloons_2 15s infinite;
+}
+
+#f5_Untitled_Artwork_7 {
+  animation: floatBaloons_1 9s infinite;
+}
+
+#f5_Untitled_Artwork_8 {
+  animation: floatBaloons_2 30s infinite;
+}
+
+#f5_Untitled_Artwork_15 {
+  animation: floatBaloons_1 20s infinite;
+}
+
+#f5_Untitled_Artwork_12 {
+  animation: floatBaloons 25s infinite;
+}
+
+#f5_Untitled_Artwork_11 {
+  animation: floatBaloons_2 25s infinite;
+}
+
+#f5_Untitled_Artwork_9 {
+  animation: floatBaloons_2 15s infinite;
+}
+
+
+
+
+
+
+@keyframes floatBaloons {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(10px, -11px);
+  }
+  80% {
+    transform: translate(-10px, 11px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes floatBaloons_1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(-10px, 11px);
+  }
+  80% {
+    transform: translate(10px, -11px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes floatBaloons_2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(12px, -11px);
+  }
+  80% {
+    transform: translate(-10px, 8px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+.anim-fadeIn {
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
 }
