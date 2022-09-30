@@ -1,3 +1,11 @@
+@mixin absoluteFrame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -141,18 +149,18 @@ section img {
   top: 50%;
   transform: translateY(-50%);
   right: 0;
-  // background: #686868;
-  overflow: hidden;
+  background: #40404035;
+  // overflow: hidden;
   .prg-bar {
-    background: #d6d6d6;
+    background: #ffffff;
     position: absolute;
     top: 0;
-    right: 50%;
+    right: 5px;
     width: 4px;
     border-radius: 20px;
-    transform: translate(50%, 20px);
+    transform: translate(50%, 0);
     &::after {
-      content: '';
+      // content: '';
       width: 10px;
       height: 10px;
       border-radius: 10px;
@@ -174,6 +182,7 @@ section img {
     position: relative;
     z-index: 1;
     li {
+      position: relative;
       a {
         list-style: none;
         text-decoration: none;
@@ -194,6 +203,23 @@ section img {
           transform: rotate(-45deg);
         }
       }
+      .li-ph {
+        position: absolute;
+        height: 40px;
+        width: 100%;
+        // background: #cff;
+        transform: translate(50%, 75%);
+        left: -50%;
+        span {
+          position: absolute;
+          display: block;
+          top: 0;
+          width: 10px;
+          left: 50%;
+          background: #ffffff;
+          transform: translate(-50%, 0);
+        }
+      }
     }
   }
   &::before {
@@ -210,7 +236,7 @@ section img {
 
 .sec-nav {
   opacity: 1;
-  background: #0000004a;
+  background: #6767674a;
   position: absolute;
   z-index: 100;
   color: #fff;
@@ -228,7 +254,38 @@ section img {
 
 //Animations
 
+//frame 01
+.f1_spaceShip {
+  @include absoluteFrame;
+  animation: shipHover 4s infinite alternate forwards;
+}
 
+@keyframes shipHover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+.f1_twoSpaceShips {
+  animation: shipHover2 8s infinite alternate forwards;
+  @include absoluteFrame;
+
+}
+
+@keyframes shipHover2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+
+//frame 03
 #f3_13_flashes {
   animation: pulse 2s infinite;
 }

@@ -136,22 +136,21 @@ section img {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 0;
-  overflow: hidden;
+  background: #40404035;
 }
 
 .navigation .prg-bar {
-  background: #d6d6d6;
+  background: #ffffff;
   position: absolute;
   top: 0;
-  right: 50%;
+  right: 5px;
   width: 4px;
   border-radius: 20px;
-  -webkit-transform: translate(50%, 20px);
-          transform: translate(50%, 20px);
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
 }
 
 .navigation .prg-bar::after {
-  content: '';
   width: 10px;
   height: 10px;
   border-radius: 10px;
@@ -178,6 +177,10 @@ section img {
           justify-content: space-between;
   position: relative;
   z-index: 1;
+}
+
+.navigation ul li {
+  position: relative;
 }
 
 .navigation ul li a {
@@ -209,6 +212,26 @@ section img {
           transform: rotate(-45deg);
 }
 
+.navigation ul li .li-ph {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  -webkit-transform: translate(50%, 75%);
+          transform: translate(50%, 75%);
+  left: -50%;
+}
+
+.navigation ul li .li-ph span {
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 10px;
+  left: 50%;
+  background: #ffffff;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
 .navigation::before {
   content: '';
   position: absolute;
@@ -223,7 +246,7 @@ section img {
 
 .sec-nav {
   opacity: 1;
-  background: #0000004a;
+  background: #6767674a;
   position: absolute;
   z-index: 100;
   color: #fff;
@@ -239,6 +262,70 @@ section img {
 .sec-nav > div .nav-f {
   border-bottom: 1px solid;
   height: 100vh;
+}
+
+.f1_spaceShip {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-animation: shipHover 4s infinite alternate forwards;
+          animation: shipHover 4s infinite alternate forwards;
+}
+
+@-webkit-keyframes shipHover {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+
+@keyframes shipHover {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+
+.f1_twoSpaceShips {
+  -webkit-animation: shipHover2 8s infinite alternate forwards;
+          animation: shipHover2 8s infinite alternate forwards;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@-webkit-keyframes shipHover2 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+}
+
+@keyframes shipHover2 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
 }
 
 #f3_13_flashes {

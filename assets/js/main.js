@@ -7,7 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
 const windowHeight = window.innerHeight;
 const bodyHeight = document.querySelector('body').offsetHeight;
 const prgBar = document.querySelector('.prg-bar');
-
+//navigation section each height
+const li_ph_1 = document.querySelector('.li_ph_1');
+const li_ph_2 = document.querySelector('.li_ph_2');
+const li_ph_3 = document.querySelector('.li_ph_3');
+const li_ph_4 = document.querySelector('.li_ph_4');
+const li_ph_5 = document.querySelector('.li_ph_5');
+const li_ph_6 = document.querySelector('.li_ph_6');
 
 
 console.log(bodyHeight);
@@ -178,7 +184,12 @@ window.addEventListener('scroll', () => {
   prgBar.style.height = `calc(${scroll_y} / (${bodyHeight} - ${windowHeight} ) * 100%)`
 
 
+
+
+
   if (scroll_y < frameSwap_1) {
+    li_ph_1.style.height = `calc(${scroll_y} / (${frameSwap_1}) * 100%)`
+
     //show FRAME 01 
     frame01.classList.remove('hide')
     frame02.classList.add('hide')
@@ -200,6 +211,8 @@ window.addEventListener('scroll', () => {
 
 
   } else if (scroll_y > frameSwap_1 && scroll_y < frameSwap_2) {
+    li_ph_2.style.height = `calc( (${scroll_y} - ${frameSwap_1}) / (${frameSwap_2} - ${frameSwap_1}) * 100%)`
+
     //show FRAME 02 
     frame01.classList.add('hide')
     frame02.classList.remove('hide')
@@ -217,6 +230,8 @@ window.addEventListener('scroll', () => {
     f1_logo_lg.classList.remove('anim-fadeIn')
 
   } else if (scroll_y > frameSwap_2 && scroll_y < frameSwap_3) {
+    li_ph_3.style.height = `calc( (${scroll_y} - ${frameSwap_2}) / (${frameSwap_3} - ${frameSwap_2}) * 100%)`
+
     //show FRAME 03 
     frame01.classList.add('hide')
     frame02.classList.add('hide')
@@ -231,6 +246,8 @@ window.addEventListener('scroll', () => {
     frame_05 = false;
     // frameRevert('02')
   } else if (scroll_y > frameSwap_3 && scroll_y < frameSwap_4) {
+    li_ph_4.style.height = `calc( (${scroll_y} - ${frameSwap_3}) / (${frameSwap_4} - ${frameSwap_3}) * 100%)`
+
     //show FRAME 04 
     frame01.classList.add('hide')
     frame02.classList.add('hide')
@@ -244,6 +261,12 @@ window.addEventListener('scroll', () => {
     frame_04 = true;
     frame_05 = false;
   } else if (scroll_y > frameSwap_4 && scroll_y < frameSwap_5) {
+    li_ph_1.style.height = '100%';
+    li_ph_2.style.height = '100%';
+    li_ph_3.style.height = '100%';
+    li_ph_4.style.height = '100%';
+    li_ph_5.style.height = `calc( (${scroll_y} - ${frameSwap_4}) / (${frameSwap_5} - ${frameSwap_4}) * 100%)`
+
     //show FRAME 05 
     frame01.classList.add('hide')
     frame02.classList.add('hide')
@@ -281,7 +304,7 @@ window.addEventListener('scroll', () => {
     // bg2.style.top = scroll_y * 0.9 + 'px';
     bg2.style.transform = `scale(1.${scroll_y * 0.4 + 100})`;
     park.style.transform = `scale(1.${scroll_y * 0.2 + 100})`;
-    clouds.style.transform = `scale(1.${scroll_y * 0.6 + 100})`;
+    clouds.style.transform = `scale(1.${scroll_y * 0.25 + 100})`;
     van.style.top = scroll_y * 0.05 + 'px';
     van.style.transform = `scale(${1 + scroll_y * 0.0006})`;
     space_ship.style.transform = `scale(${1 - scroll_y * 0.0005})`;
@@ -294,11 +317,11 @@ window.addEventListener('scroll', () => {
     f2_front_tower.style.transform = `scale(${1 + scroll_y * 0.0008000 - speedFactor})`;
     f2_front_lights.style.transform = `scale(${1 + scroll_y * 0.0004500 - speedFactor})`;
     f2_entrance_right.style.transform = `scale(${1 + scroll_y * 0.0003500 - speedFactor})`;
-    f2_entrance_right.style.top = scroll_y * -0.08 + 'px';
+    // f2_entrance_right.style.top = scroll_y * -0.08 + 'px';
     f2_entrance_gate.style.transform = `scale(${1 + scroll_y * 0.0002500 - speedFactor})`;
-    f2_entrance_gate.style.top = scroll_y * -0.05 + 'px';
-    f2_entrance_center.style.transform = `scale(${1 + scroll_y * 0.0001500 - speedFactor})`;
-    f2_entrance_center.style.top = scroll_y * -0.02 + 'px';
+    // f2_entrance_gate.style.top = scroll_y * -0.05 + 'px';
+    f2_entrance_center.style.transform = `scale(${1 + scroll_y * 0.0002000 - speedFactor})`;
+    // f2_entrance_center.style.top = scroll_y * 0.02 + 'px';
     f2_city_tower_home.style.transform = `scale(${1 + scroll_y * 0.0001000 - speedFactor})`;
     f2_wheel.style.transform = `scale(${1 + scroll_y * 0.0000900 - speedFactor})`;
     f2_big_plannet.style.transform = `scale(${1 + scroll_y * 0.0000850 - speedFactor})`;
@@ -347,29 +370,31 @@ window.addEventListener('scroll', () => {
     scroll_y = scroll_y - frameSwap_4;
     let speedFactor = 0
 
-    f5_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
-    f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
-    f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00005900 - speedFactor})`;
-    f5_Untitled_Artwork_5.style.transform = `scale(${1 + scroll_y * 0.00005700 - speedFactor})`;
+    f5_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
+    f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
+    f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00015900 - speedFactor})`;
+    f5_Untitled_Artwork_5.style.transform = `scale(${1 + scroll_y * 0.00015700 - speedFactor})`;
 
     if ((scroll_y + frameSwap_4) > 6400) {
       frame05.style.transform = `translate(0,-30%)`;
-      // f5_Untitled_Artwork_16.style.transform = `translate(0,50%)`
-      // f5_Untitled_Artwork_17.style.transform = `translate(0,60%)`
+      f5_Untitled_Artwork_16.style.transform = `translate(0,88%)`
       if ((scroll_y + frameSwap_4) > 6700) {
         frame05.style.transform = `translate(0%,-80%)`;
         // f5_Untitled_Artwork_17.style.transform = `translate(0,60%)`
+        f5_Untitled_Artwork_16.style.transform = `translate(0,75%)`
+        f5_Untitled_Artwork_17.style.transform = `translate(0,40%)`
 
         if ((scroll_y + frameSwap_4) > 7000) {
           frame05.style.transform = `translate(0%,-100%)`;
           // f5_Untitled_Artwork_17.style.transform = `translate(0,50%)`
+          f5_Untitled_Artwork_17.style.transform = `translate(0,10%)`
 
         }
       }
     } else {
       frame05.style.transform = `translate(0%,0)`;
-      // f5_Untitled_Artwork_16.style.transform = `translate(0,60%)`
-      // f5_Untitled_Artwork_17.style.transform = `translate(0,60%)`
+      f5_Untitled_Artwork_16.style.transform = `translate(0,90%)`
+      f5_Untitled_Artwork_17.style.transform = `translate(0,100%)`
 
     }
   }
