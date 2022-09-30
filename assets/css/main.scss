@@ -36,6 +36,10 @@ section {
   opacity: 1;
 }
 
+.anim-ease-sc {
+  transition: all 1s ease;
+
+}
 
 
 .logo-ph {
@@ -148,7 +152,7 @@ section img {
     border-radius: 20px;
     transform: translate(50%, 20px);
     &::after {
-      // content: '';
+      content: '';
       width: 10px;
       height: 10px;
       border-radius: 10px;
@@ -241,6 +245,16 @@ section img {
   100% {
     opacity: 1;
   }
+}
+
+#f5_Untitled_Artwork_16 {
+  position: absolute;
+  transform: translate(0, 60%);
+}
+#f5_Untitled_Artwork_17 {
+  position: absolute;
+  transform: translate(0, 74%);
+
 }
 
 #f5_Untitled_Artwork_13 {

@@ -99,7 +99,8 @@ let f5_Untitled_Artwork_12 = document.getElementById('f5_Untitled_Artwork_12')
 let f5_Untitled_Artwork_13 = document.getElementById('f5_Untitled_Artwork_13')
 let f5_Untitled_Artwork_14 = document.getElementById('f5_Untitled_Artwork_14')
 let f5_Untitled_Artwork_15 = document.getElementById('f5_Untitled_Artwork_15')
-
+let f5_Untitled_Artwork_16 = document.getElementById('f5_Untitled_Artwork_16')
+let f5_Untitled_Artwork_17 = document.getElementById('f5_Untitled_Artwork_17')
 
 //frame 06 -----------------------------
 
@@ -156,7 +157,7 @@ const fr_04 = document.querySelector('.fr-04')
 fr_04.style.height = `calc(${frameSwap_4}px - ${frameSwap_3}px)`
 
 const fr_05 = document.querySelector('.fr-05')
-fr_04.style.height = `calc(${frameSwap_5}px - ${frameSwap_4}px)`
+fr_05.style.height = `calc(${frameSwap_5}px - ${frameSwap_4}px)`
 
 // const fr_06 = document.querySelector('.fr-06')
 // fr_04.style.height = `calc(${frameSwap_6}px - ${frameSwap_5}px)`
@@ -184,6 +185,7 @@ window.addEventListener('scroll', () => {
     frame03.classList.add('hide')
     frame04.classList.add('hide')
     frame05.classList.add('hide')
+    frame06.classList.add('hide')
 
     frame_01 = true;
     frame_02 = false;
@@ -204,6 +206,7 @@ window.addEventListener('scroll', () => {
     frame03.classList.add('hide')
     frame04.classList.add('hide')
     frame05.classList.add('hide')
+    frame06.classList.add('hide')
     frame_01 = false;
     frame_02 = true;
     frame_03 = false;
@@ -220,6 +223,7 @@ window.addEventListener('scroll', () => {
     frame03.classList.remove('hide')
     frame04.classList.add('hide')
     frame05.classList.add('hide')
+    frame06.classList.add('hide')
     frame_01 = false;
     frame_02 = false;
     frame_03 = true;
@@ -233,6 +237,7 @@ window.addEventListener('scroll', () => {
     frame03.classList.add('hide')
     frame04.classList.remove('hide')
     frame05.classList.add('hide')
+    frame06.classList.add('hide')
     frame_01 = false;
     frame_02 = false;
     frame_03 = false;
@@ -245,6 +250,7 @@ window.addEventListener('scroll', () => {
     frame03.classList.add('hide')
     frame04.classList.add('hide')
     frame05.classList.remove('hide')
+    frame06.classList.add('hide')
     frame_01 = false;
     frame_02 = false;
     frame_03 = false;
@@ -336,7 +342,8 @@ window.addEventListener('scroll', () => {
     f4_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00000800 - speedFactor})`;
     f4_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
 
-  } if (frame_05 && scroll_y > frameSwap_4) {
+  }
+  if (frame_05 && scroll_y > frameSwap_4) {
     scroll_y = scroll_y - frameSwap_4;
     let speedFactor = 0
 
@@ -344,9 +351,28 @@ window.addEventListener('scroll', () => {
     f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
     f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00005900 - speedFactor})`;
     f5_Untitled_Artwork_5.style.transform = `scale(${1 + scroll_y * 0.00005700 - speedFactor})`;
+
+    if ((scroll_y + frameSwap_4) > 6400) {
+      frame05.style.transform = `translate(0,-30%)`;
+      // f5_Untitled_Artwork_16.style.transform = `translate(0,50%)`
+      // f5_Untitled_Artwork_17.style.transform = `translate(0,60%)`
+      if ((scroll_y + frameSwap_4) > 6700) {
+        frame05.style.transform = `translate(0%,-80%)`;
+        // f5_Untitled_Artwork_17.style.transform = `translate(0,60%)`
+
+        if ((scroll_y + frameSwap_4) > 7000) {
+          frame05.style.transform = `translate(0%,-100%)`;
+          // f5_Untitled_Artwork_17.style.transform = `translate(0,50%)`
+
+        }
+      }
+    } else {
+      frame05.style.transform = `translate(0%,0)`;
+      // f5_Untitled_Artwork_16.style.transform = `translate(0,60%)`
+      // f5_Untitled_Artwork_17.style.transform = `translate(0,60%)`
+
+    }
   }
-
-
 
 
 })

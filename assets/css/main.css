@@ -34,6 +34,11 @@ section {
   opacity: 1;
 }
 
+.anim-ease-sc {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
 .logo-ph {
   -webkit-transform: translate(0, 310px) scale(0.8);
           transform: translate(0, 310px) scale(0.8);
@@ -146,6 +151,7 @@ section img {
 }
 
 .navigation .prg-bar::after {
+  content: '';
   width: 10px;
   height: 10px;
   border-radius: 10px;
@@ -268,6 +274,18 @@ section img {
   100% {
     opacity: 1;
   }
+}
+
+#f5_Untitled_Artwork_16 {
+  position: absolute;
+  -webkit-transform: translate(0, 60%);
+          transform: translate(0, 60%);
+}
+
+#f5_Untitled_Artwork_17 {
+  position: absolute;
+  -webkit-transform: translate(0, 74%);
+          transform: translate(0, 74%);
 }
 
 #f5_Untitled_Artwork_13 {
