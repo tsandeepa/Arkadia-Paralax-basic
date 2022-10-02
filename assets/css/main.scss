@@ -1,9 +1,25 @@
+@import url(_responsive.scss);
 @mixin absoluteFrame {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+}
+
+@font-face {
+  font-family: cinzel_reguralr;
+  src: url('../fonts/cinzel.regular.ttf');
+}
+
+@font-face {
+  font-family: flanker;
+  src: url('../fonts/Flanker-Griffo.otf');
+}
+
+@font-face {
+  font-family: cinzel_bold;
+  src: url('../fonts/cinzel.decorative-bold.ttf');
 }
 
 * {
@@ -46,9 +62,20 @@ section {
 
 .anim-ease-sc {
   transition: all 1s ease;
-
 }
 
+.text-layer {
+  h2 {
+    font-family: cinzel_bold;
+  }
+  p {
+    font-family: flanker;
+  }
+}
+
+.f2-text-layer {
+  background-image: url('../images/frame-01/');
+}
 
 .logo-ph {
   transform: translate(0, 310px) scale(0.8);
@@ -79,6 +106,11 @@ section img {
   height: 100%;
   object-fit: cover;
   transition: all 0.5s linear;
+}
+
+section video {
+  position: absolute;
+  z-index: 2;
 }
 
 #sc-val {
@@ -144,14 +176,13 @@ section img {
 .navigation {
   position: fixed;
   z-index: 9000;
-  height: 40%;
   padding: 3px 30px;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
-  background: #40404035;
   // overflow: hidden;
   .prg-bar {
+    display: none;
     background: #ffffff;
     position: absolute;
     top: 0;
@@ -198,9 +229,22 @@ section img {
         background: #000;
         color: #fff;
         border: 2px solid;
-        transform: rotate(45deg);
+        // transform: rotate(45deg);
+        p {
+          position: absolute;
+          width: 200px;
+          top: 5px;
+          padding: 0 8px;
+          opacity: 0.4;
+          right: 0;
+          text-align: right;
+          padding-right: 45px;
+        }
         span {
-          transform: rotate(-45deg);
+          // transform: rotate(-45deg);
+        }
+        &:hover+p {
+          opacity: 1;
         }
       }
       .li-ph {
@@ -214,7 +258,7 @@ section img {
           position: absolute;
           display: block;
           top: 0;
-          width: 10px;
+          width: 3px;
           left: 50%;
           background: #ffffff;
           transform: translate(-50%, 0);
@@ -230,7 +274,18 @@ section img {
     right: 50%;
     transform: translate(1px, 0);
     border-left: 1px dashed;
-    border-color: #e0e0e080;
+    border-color: #ffffff;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: blur(36px);
+    opacity: 0.3;
   }
 }
 
@@ -257,7 +312,8 @@ section img {
 //frame 01
 .f1_spaceShip {
   @include absoluteFrame;
-  animation: shipHover 4s infinite alternate forwards;
+  animation: shipHover 2s infinite alternate forwards;
+  left: -110px;
 }
 
 @keyframes shipHover {
@@ -296,9 +352,6 @@ section img {
   40% {
     opacity: 0.6;
   }
-  80% {
-    opacity: 0.8;
-  }
   100% {
     opacity: 1;
   }
@@ -307,11 +360,13 @@ section img {
 #f5_Untitled_Artwork_16 {
   position: absolute;
   transform: translate(0, 60%);
+  transition: all 1s ease-out;
 }
 #f5_Untitled_Artwork_17 {
   position: absolute;
+  object-fit: fill;
   transform: translate(0, 74%);
-
+  transition: all 1s ease-out;
 }
 
 #f5_Untitled_Artwork_13 {
@@ -345,8 +400,6 @@ section img {
 #f5_Untitled_Artwork_9 {
   animation: floatBaloons_2 15s infinite;
 }
-
-
 
 
 
@@ -394,8 +447,44 @@ section img {
   }
 }
 
+#frame-06 {
+  transform: translate(0, 300px);
+  transition: 1s ease;
+}
+
+#f6_Untitled_Artwork_4 {
+  transform: translate(0, -55%);
+  object-fit: fill;
+  transition: 2s ease;
+}
+
+.f6-anim-fadeIn {
+  transform: translate(0, 0) !important;
+}
+
+.f7_fa_dodge {
+  mix-blend-mode: color-dodge;
+  animation: pulse 3s infinite alternate ease;
+}
 
 .anim-fadeIn {
   transform: translate(0, 0) scale(1);
   opacity: 1;
+}
+
+
+.scroll-bound {
+  height: 500vh;
+
+  .content {
+    height: 100vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
 }

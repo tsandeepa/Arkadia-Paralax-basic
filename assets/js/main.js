@@ -14,6 +14,7 @@ const li_ph_3 = document.querySelector('.li_ph_3');
 const li_ph_4 = document.querySelector('.li_ph_4');
 const li_ph_5 = document.querySelector('.li_ph_5');
 const li_ph_6 = document.querySelector('.li_ph_6');
+const li_ph_7 = document.querySelector('.li_ph_7');
 
 
 console.log(bodyHeight);
@@ -112,6 +113,11 @@ let f5_Untitled_Artwork_17 = document.getElementById('f5_Untitled_Artwork_17')
 
 let frame06 = document.getElementById('frame-06')
 
+let f6_Untitled_Artwork_4 = document.getElementById('f6_Untitled_Artwork_4')
+
+
+//frame 07 -----------------------------
+let frame07 = document.getElementById('frame-07')
 
 
 
@@ -140,12 +146,15 @@ let frame_03;
 let frame_04;
 let frame_05;
 let frame_06;
+let frame_07;
 
 let frameSwap_1 = 690;
 let frameSwap_2 = 2000;
 let frameSwap_3 = 3500;
 let frameSwap_4 = 5300;
 let frameSwap_5 = 7200;
+let frameSwap_6 = 8300;
+let frameSwap_7 = 9500;
 
 
 //navigation body section heights 
@@ -165,17 +174,14 @@ fr_04.style.height = `calc(${frameSwap_4}px - ${frameSwap_3}px)`
 const fr_05 = document.querySelector('.fr-05')
 fr_05.style.height = `calc(${frameSwap_5}px - ${frameSwap_4}px)`
 
-// const fr_06 = document.querySelector('.fr-06')
-// fr_04.style.height = `calc(${frameSwap_6}px - ${frameSwap_5}px)`
+const fr_06 = document.querySelector('.fr-06')
+fr_06.style.height = `calc(${frameSwap_6}px - ${frameSwap_5}px)`
 
-
-
+const fr_07 = document.querySelector('.fr-07')
+fr_07.style.height = `calc(${frameSwap_7}px - ${frameSwap_6}px)`
 
 
 //section fade in animations
-
-
-
 
 window.addEventListener('scroll', () => {
   let scroll_y = window.scrollY;
@@ -184,10 +190,11 @@ window.addEventListener('scroll', () => {
   prgBar.style.height = `calc(${scroll_y} / (${bodyHeight} - ${windowHeight} ) * 100%)`
 
 
-
-
-
   if (scroll_y < frameSwap_1) {
+    li_ph_2.style.height = '0%';
+    li_ph_3.style.height = '0%';
+    li_ph_4.style.height = '0%';
+    li_ph_5.style.height = '0%';
     li_ph_1.style.height = `calc(${scroll_y} / (${frameSwap_1}) * 100%)`
 
     //show FRAME 01 
@@ -211,6 +218,10 @@ window.addEventListener('scroll', () => {
 
 
   } else if (scroll_y > frameSwap_1 && scroll_y < frameSwap_2) {
+    li_ph_3.style.height = '0%';
+    li_ph_4.style.height = '0%';
+    li_ph_5.style.height = '0%';
+    li_ph_1.style.height = '100%';
     li_ph_2.style.height = `calc( (${scroll_y} - ${frameSwap_1}) / (${frameSwap_2} - ${frameSwap_1}) * 100%)`
 
     //show FRAME 02 
@@ -230,6 +241,8 @@ window.addEventListener('scroll', () => {
     f1_logo_lg.classList.remove('anim-fadeIn')
 
   } else if (scroll_y > frameSwap_2 && scroll_y < frameSwap_3) {
+    li_ph_1.style.height = '100%';
+    li_ph_2.style.height = '100%';
     li_ph_3.style.height = `calc( (${scroll_y} - ${frameSwap_2}) / (${frameSwap_3} - ${frameSwap_2}) * 100%)`
 
     //show FRAME 03 
@@ -246,6 +259,9 @@ window.addEventListener('scroll', () => {
     frame_05 = false;
     // frameRevert('02')
   } else if (scroll_y > frameSwap_3 && scroll_y < frameSwap_4) {
+    li_ph_1.style.height = '100%';
+    li_ph_2.style.height = '100%';
+    li_ph_3.style.height = '100%';
     li_ph_4.style.height = `calc( (${scroll_y} - ${frameSwap_3}) / (${frameSwap_4} - ${frameSwap_3}) * 100%)`
 
     //show FRAME 04 
@@ -261,6 +277,7 @@ window.addEventListener('scroll', () => {
     frame_04 = true;
     frame_05 = false;
   } else if (scroll_y > frameSwap_4 && scroll_y < frameSwap_5) {
+
     li_ph_1.style.height = '100%';
     li_ph_2.style.height = '100%';
     li_ph_3.style.height = '100%';
@@ -274,12 +291,25 @@ window.addEventListener('scroll', () => {
     frame04.classList.add('hide')
     frame05.classList.remove('hide')
     frame06.classList.add('hide')
+    frame06.classList.remove('f6-anim-fadeIn')
+
+    f6_Untitled_Artwork_4.style.transform = ' translate(0, -55%)'
+
+
     frame_01 = false;
     frame_02 = false;
     frame_03 = false;
     frame_04 = false;
     frame_05 = true;
-  } else if (scroll_y > frameSwap_5) {
+  } else if (scroll_y > frameSwap_5 && scroll_y < frameSwap_6) {
+
+    li_ph_1.style.height = '100%';
+    li_ph_2.style.height = '100%';
+    li_ph_3.style.height = '100%';
+    li_ph_4.style.height = '100%';
+    li_ph_5.style.height = '100%';
+    li_ph_6.style.height = `calc( (${scroll_y} - ${frameSwap_5}) / (${frameSwap_6} - ${frameSwap_5}) * 100%)`
+
     //show FRAME 06 
     frame01.classList.add('hide')
     frame02.classList.add('hide')
@@ -287,15 +317,27 @@ window.addEventListener('scroll', () => {
     frame04.classList.add('hide')
     frame05.classList.add('hide')
     frame06.classList.remove('hide')
+    frame07.classList.add('hide')
+
+    //Animation - frame 06 slide up
+    frame06.classList.add('f6-anim-fadeIn')
+    f6_Untitled_Artwork_4.style.transform = ' translate(0, -100%)'
     frame_01 = false;
     frame_02 = false;
     frame_03 = false;
     frame_04 = false;
     frame_05 = false;
     frame_06 = true;
+  } else if (scroll_y > frameSwap_6) {
+    //show FRAME 06 
+    frame01.classList.add('hide')
+    frame02.classList.add('hide')
+    frame03.classList.add('hide')
+    frame04.classList.add('hide')
+    frame05.classList.add('hide')
+    frame06.classList.add('hide')
+    frame07.classList.remove('hide')
   }
-
-
 
   sc_val.innerHTML = scroll_y;
   // bg1.style.top = scroll_y * 0.1 + 'px';
@@ -398,6 +440,5 @@ window.addEventListener('scroll', () => {
 
     }
   }
-
 
 })

@@ -1,4 +1,20 @@
+@import url(_responsive.scss);
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@font-face {
+  font-family: cinzel_reguralr;
+  src: url("../fonts/cinzel.regular.ttf");
+}
+
+@font-face {
+  font-family: flanker;
+  src: url("../fonts/Flanker-Griffo.otf");
+}
+
+@font-face {
+  font-family: cinzel_bold;
+  src: url("../fonts/cinzel.decorative-bold.ttf");
+}
+
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -39,6 +55,18 @@ section {
   transition: all 1s ease;
 }
 
+.text-layer h2 {
+  font-family: cinzel_bold;
+}
+
+.text-layer p {
+  font-family: flanker;
+}
+
+.f2-text-layer {
+  background-image: url("../images/frame-01/");
+}
+
 .logo-ph {
   -webkit-transform: translate(0, 310px) scale(0.8);
           transform: translate(0, 310px) scale(0.8);
@@ -72,6 +100,11 @@ section img {
      object-fit: cover;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
+}
+
+section video {
+  position: absolute;
+  z-index: 2;
 }
 
 #sc-val {
@@ -130,16 +163,15 @@ section img {
 .navigation {
   position: fixed;
   z-index: 9000;
-  height: 40%;
   padding: 3px 30px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 0;
-  background: #40404035;
 }
 
 .navigation .prg-bar {
+  display: none;
   background: #ffffff;
   position: absolute;
   top: 0;
@@ -203,13 +235,21 @@ section img {
   background: #000;
   color: #fff;
   border: 2px solid;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
 }
 
-.navigation ul li a span {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+.navigation ul li a p {
+  position: absolute;
+  width: 200px;
+  top: 5px;
+  padding: 0 8px;
+  opacity: 0.4;
+  right: 0;
+  text-align: right;
+  padding-right: 45px;
+}
+
+.navigation ul li a:hover + p {
+  opacity: 1;
 }
 
 .navigation ul li .li-ph {
@@ -225,7 +265,7 @@ section img {
   position: absolute;
   display: block;
   top: 0;
-  width: 10px;
+  width: 3px;
   left: 50%;
   background: #ffffff;
   -webkit-transform: translate(-50%, 0);
@@ -241,7 +281,20 @@ section img {
   -webkit-transform: translate(1px, 0);
           transform: translate(1px, 0);
   border-left: 1px dashed;
-  border-color: #e0e0e080;
+  border-color: #ffffff;
+}
+
+.navigation::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  -webkit-filter: blur(36px);
+          filter: blur(36px);
+  opacity: 0.3;
 }
 
 .sec-nav {
@@ -270,8 +323,9 @@ section img {
   height: 100%;
   top: 0;
   left: 0;
-  -webkit-animation: shipHover 4s infinite alternate forwards;
-          animation: shipHover 4s infinite alternate forwards;
+  -webkit-animation: shipHover 2s infinite alternate forwards;
+          animation: shipHover 2s infinite alternate forwards;
+  left: -110px;
 }
 
 @-webkit-keyframes shipHover {
@@ -340,9 +394,6 @@ section img {
   40% {
     opacity: 0.6;
   }
-  80% {
-    opacity: 0.8;
-  }
   100% {
     opacity: 1;
   }
@@ -355,9 +406,6 @@ section img {
   40% {
     opacity: 0.6;
   }
-  80% {
-    opacity: 0.8;
-  }
   100% {
     opacity: 1;
   }
@@ -367,12 +415,18 @@ section img {
   position: absolute;
   -webkit-transform: translate(0, 60%);
           transform: translate(0, 60%);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 #f5_Untitled_Artwork_17 {
   position: absolute;
+  -o-object-fit: fill;
+     object-fit: fill;
   -webkit-transform: translate(0, 74%);
           transform: translate(0, 74%);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 #f5_Untitled_Artwork_13 {
@@ -527,6 +581,33 @@ section img {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
+}
+
+#frame-06 {
+  -webkit-transform: translate(0, 300px);
+          transform: translate(0, 300px);
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+#f6_Untitled_Artwork_4 {
+  -webkit-transform: translate(0, -55%);
+          transform: translate(0, -55%);
+  -o-object-fit: fill;
+     object-fit: fill;
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
+}
+
+.f6-anim-fadeIn {
+  -webkit-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+}
+
+.f7_fa_dodge {
+  mix-blend-mode: color-dodge;
+  -webkit-animation: pulse 3s infinite alternate ease;
+          animation: pulse 3s infinite alternate ease;
 }
 
 .anim-fadeIn {
