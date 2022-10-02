@@ -108,10 +108,6 @@ section img {
   transition: all 0.5s linear;
 }
 
-section video {
-  position: absolute;
-  z-index: 2;
-}
 
 #sc-val {
   position: fixed;
@@ -462,6 +458,17 @@ section video {
   transform: translate(0, 0) !important;
 }
 
+.v_player {
+  background: #fcf;
+  video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
 .f7_fa_dodge {
   mix-blend-mode: color-dodge;
   animation: pulse 3s infinite alternate ease;
@@ -470,21 +477,4 @@ section video {
 .anim-fadeIn {
   transform: translate(0, 0) scale(1);
   opacity: 1;
-}
-
-
-.scroll-bound {
-  height: 500vh;
-
-  .content {
-    height: 100vh;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
 }

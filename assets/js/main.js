@@ -114,6 +114,7 @@ let f5_Untitled_Artwork_17 = document.getElementById('f5_Untitled_Artwork_17')
 let frame06 = document.getElementById('frame-06')
 
 let f6_Untitled_Artwork_4 = document.getElementById('f6_Untitled_Artwork_4')
+let f6_r1 = document.getElementById('f6_r1')
 
 
 //frame 07 -----------------------------
@@ -296,11 +297,13 @@ window.addEventListener('scroll', () => {
     f6_Untitled_Artwork_4.style.transform = ' translate(0, -55%)'
 
 
+
     frame_01 = false;
     frame_02 = false;
     frame_03 = false;
     frame_04 = false;
     frame_05 = true;
+    frame_06 = false;
   } else if (scroll_y > frameSwap_5 && scroll_y < frameSwap_6) {
 
     li_ph_1.style.height = '100%';
@@ -319,9 +322,6 @@ window.addEventListener('scroll', () => {
     frame06.classList.remove('hide')
     frame07.classList.add('hide')
 
-    //Animation - frame 06 slide up
-    frame06.classList.add('f6-anim-fadeIn')
-    f6_Untitled_Artwork_4.style.transform = ' translate(0, -100%)'
     frame_01 = false;
     frame_02 = false;
     frame_03 = false;
@@ -408,9 +408,11 @@ window.addEventListener('scroll', () => {
     f4_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
 
   }
-  if (frame_05 && scroll_y > frameSwap_4) {
+  if (frame_05 && scroll_y > frameSwap_4 + 150) {
     scroll_y = scroll_y - frameSwap_4;
     let speedFactor = 0
+
+    f6_r1.pause()
 
     f5_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
     f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
@@ -439,6 +441,21 @@ window.addEventListener('scroll', () => {
       f5_Untitled_Artwork_17.style.transform = `translate(0,100%)`
 
     }
+  }
+  if (frame06 && scroll_y > frameSwap_5) {
+    scroll_y = scroll_y - frameSwap_5;
+    //Animation - frame 06 slide up
+    frame06.classList.add('f6-anim-fadeIn')
+
+    f6_r1.play()
+
+    f6_Untitled_Artwork_4.style.transform = ' translate(0, -100%)'
+
+
+
+  } if (!frame06) {
+
+
   }
 
 })

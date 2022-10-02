@@ -102,11 +102,6 @@ section img {
   transition: all 0.5s linear;
 }
 
-section video {
-  position: absolute;
-  z-index: 2;
-}
-
 #sc-val {
   position: fixed;
   z-index: 99999;
@@ -602,6 +597,18 @@ section video {
 .f6-anim-fadeIn {
   -webkit-transform: translate(0, 0) !important;
           transform: translate(0, 0) !important;
+}
+
+.v_player {
+  background: #fcf;
+}
+
+.v_player video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .f7_fa_dodge {
