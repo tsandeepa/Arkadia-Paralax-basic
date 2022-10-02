@@ -328,8 +328,15 @@ window.addEventListener('scroll', () => {
     frame_04 = false;
     frame_05 = false;
     frame_06 = true;
-  } else if (scroll_y > frameSwap_6) {
-    //show FRAME 06 
+    frame_07 = false;
+  } else if (scroll_y > frameSwap_6 && scroll_y < frameSwap_7) {
+    li_ph_1.style.height = '100%';
+    li_ph_2.style.height = '100%';
+    li_ph_3.style.height = '100%';
+    li_ph_4.style.height = '100%';
+    li_ph_5.style.height = '100%';
+    li_ph_6.style.height = '100%';
+    //show FRAME 07 
     frame01.classList.add('hide')
     frame02.classList.add('hide')
     frame03.classList.add('hide')
@@ -337,6 +344,11 @@ window.addEventListener('scroll', () => {
     frame05.classList.add('hide')
     frame06.classList.add('hide')
     frame07.classList.remove('hide')
+
+    frame_06 = false;
+    frame_07 = true;
+    // alert('s')
+
   }
 
   sc_val.innerHTML = scroll_y;
@@ -432,30 +444,22 @@ window.addEventListener('scroll', () => {
           frame05.style.transform = `translate(0%,-100%)`;
           // f5_Untitled_Artwork_17.style.transform = `translate(0,50%)`
           f5_Untitled_Artwork_17.style.transform = `translate(0,10%)`
-
         }
       }
     } else {
       frame05.style.transform = `translate(0%,0)`;
       f5_Untitled_Artwork_16.style.transform = `translate(0,90%)`
       f5_Untitled_Artwork_17.style.transform = `translate(0,100%)`
-
     }
   }
   if (frame06 && scroll_y > frameSwap_5) {
     scroll_y = scroll_y - frameSwap_5;
     //Animation - frame 06 slide up
     frame06.classList.add('f6-anim-fadeIn')
-
     f6_r1.play()
-
     f6_Untitled_Artwork_4.style.transform = ' translate(0, -100%)'
-
-
-
-  } if (!frame06) {
-
-
+  }
+  if (frame_07 && scroll_y > frameSwap_6) {
   }
 
 })
