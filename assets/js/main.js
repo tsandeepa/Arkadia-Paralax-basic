@@ -424,7 +424,7 @@ window.addEventListener('scroll', () => {
     scroll_y = scroll_y - frameSwap_4;
     let speedFactor = 0
 
-    f6_r1.pause()
+    // f6_r1.pause()
 
     f5_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
     f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
