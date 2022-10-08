@@ -7,6 +7,20 @@
   left: 0;
 }
 
+@mixin btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1/1;
+  img {
+    width: 100%;
+  }
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+
 @font-face {
   font-family: cinzel_reguralr;
   src: url('../fonts/cinzel.regular.ttf');
@@ -48,8 +62,8 @@ body {
 
 header {
   position: fixed;
-  z-index: 9000;
-  padding: 26px 26px;
+  z-index: 999;
+  padding: 26px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -61,6 +75,64 @@ header {
       cursor: pointer;
     }
   }
+}
+
+.btn-menu {
+  @include btn;
+  width: 70px;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+}
+
+.nav-menu {
+  position: fixed;
+  z-index: 1000;
+  padding: 42px 20px;
+  background: #3E374D;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 360px;
+  transform: translate(-100%, 0);
+  transition: all 0.4s ease;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >img {
+      position: relative;
+      top: 10px;
+    }
+    .btn-menu-close {
+      @include btn;
+      width: 65px;
+
+    }
+  }
+
+}
+
+.nav-menu.slide-in {
+  .menu-bg {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: #6e045f;
+    background: linear-gradient(90deg, #6e045f 0%, rgba(208, 80, 80, 0) 100%);
+    z-index: -1;
+    top: 0;
+    left: 360px;
+    right: 0;
+    opacity: 0.4;
+    cursor: pointer;
+  }
+}
+
+
+.slide-in {
+  transform: translate(0, 0);
 }
 
 footer {

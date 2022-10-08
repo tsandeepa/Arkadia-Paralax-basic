@@ -1,19 +1,4 @@
-// const registerVideo = (bound, video) => {
-//   bound = document.querySelector(bound);
-//   video = document.querySelector(video);
-//   const scrollVideo = () => {
-//     if (video.duration) {
-//       const percentScrolled = 0.1;
 
-//       video.currentTime = video.duration * percentScrolled;
-//     }
-//     requestAnimationFrame(scrollVideo);
-//   }
-//   requestAnimationFrame(scrollVideo);
-// }
-
-
-// registerVideo("#bound-one", "#bound-one video");
 
 let playBt = document.getElementById('vp_play');
 let pauseBt = document.getElementById('vp_pause');

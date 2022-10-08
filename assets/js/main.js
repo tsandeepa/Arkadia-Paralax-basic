@@ -3,6 +3,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+//side menu
+const btn_menu = document.querySelector('.btn-menu')
+const nav_menu = document.querySelector('.nav-menu')
+const btn_menu_close = document.querySelector('.btn-menu-close')
+const menu_bg = document.querySelector('.menu-bg')
+
+btn_menu.addEventListener('click', () => {
+  nav_menu.classList.toggle('slide-in')
+})
+
+btn_menu_close.addEventListener('click', () => {
+  nav_menu.classList.remove('slide-in')
+})
+
+menu_bg.addEventListener('click', () => {
+  nav_menu.classList.remove('slide-in')
+})
+
+
+
 //frame 01 -----------------------------------------
 const windowHeight = window.innerHeight;
 const bodyHeight = document.querySelector('body').offsetHeight;
