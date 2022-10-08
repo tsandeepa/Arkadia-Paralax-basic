@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arkadia</title>
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/frames.css">
 
 </head>
 
 <body>
-  <label id="sc-val" style="background: #fff; opacity: 0;">0</label>
+  <label id="sc-val" style="background: #fff">0</label>
   <div class="navigation">
     <div class="prg-bar"></div>
     <ul>
@@ -87,7 +88,7 @@
   </header>
   <section id="frame-01">
 
-    <img src="assets/images/frame-01/sky.png" alt="" id="sky">
+    <img src="assets/images/frame-01/sky.jpg" alt="" id="sky">
     <img src="assets/images/frame-01/ground-2.png" alt="" id="bg2">
     <img src="assets/images/frame-01/clouds.png" alt="" id="clouds">
     <img src="assets/images/frame-01/islands.png" alt="" id="islands">
@@ -102,7 +103,7 @@
       <img src="assets/images/frame-01/two-ships.png" alt="" id="two_ships">
     </div>
     <img src="assets/images/frame-01/ground-1.png" alt="" id="bg1">
-    <img src="assets/images/frame-01/van.png" alt="" id="van">
+    <img src="assets/images/frame-01/van1.png" alt="" id="van">
 
   </section>
 
@@ -114,14 +115,16 @@
         devs, crypto visionaries, financial analysts, designers, and game developers on the Blockchain.
       </p>
     </div>
-    <img src="assets/images/frame-02/sky-full.png" id="f2-sky-full" alt="">
+    <img src="assets/images/frame-02/sky-full.jpg" id="f2-sky-full" alt="">
     <img src="assets/images/frame-02/clouds-white.png" id="f2-clouds-white" alt="">
     <img src="assets/images/frame-02/mountains.png" id="f2-mountains" alt="">
     <img src="assets/images/frame-02/big-plannet.png" id="f2-big-plannet" alt="">
-    <img src="assets/images/frame-02/wheel.png" id="f2-wheel" alt="">
+
+    <img src="assets/images/frame-02/wheel1.png" id="f2-wheel" alt="">
     <img src="assets/images/frame-02/city-tower-home.png" id="f2-city-tower-home" alt="">
     <img src="assets/images/frame-02/entrance-center.png" id="f2-entrance-center" alt="">
     <img src="assets/images/frame-02/entrance-gate.png" id="f2-entrance-gate" alt="">
+    <img src="assets/images/frame-02/Flags_3.gif" id="f2-flags" alt="">
     <img src="assets/images/frame-02/entrance-right.png" id="f2-entrance-right" alt="">
     <img src="assets/images/frame-02/front-lights.png" id="f2-front-lights" alt="">
     <img src="assets/images/frame-02/front-tower.png" id="f2-front-tower" alt="">
@@ -163,7 +166,7 @@
         devs, crypto visionaries, financial analysts, designers, and game developers on the Blockchain.
       </p>
     </div>
-    <img src="assets/images/frame-04/Untitled_Artwork-1.png" id="f4_Untitled_Artwork_1">
+    <img src="assets/images/frame-04/Untitled_Artwork-1.jpg" id="f4_Untitled_Artwork_1">
     <img src="assets/images/frame-04/Untitled_Artwork-2.png" id="f4_Untitled_Artwork_2">
     <img src="assets/images/frame-04/Untitled_Artwork-3.png" id="f4_Untitled_Artwork_3">
     <img src="assets/images/frame-04/Untitled_Artwork-4.png" id="f4_Untitled_Artwork_4">
@@ -214,13 +217,34 @@
     <img src="assets/images/frame-06/Untitled_Artwork 2 (1).png" id="f6_Untitled_Artwork_2">
     <img src="assets/images/frame-06/Untitled_Artwork 2.png" id="f6_Untitled_Artwork_3"> -->
     <div class="v_player">
-      <video id="f6_r1" width="320" height="240" autoplay loop playsinline>
+      <video id="f6_r1" width="320" height="240" playsinline>
         <source src="assets/video/roller coaster full video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
+    <div class="vbt-ph">
+      <button id="vp_play">Play</button>
+      <button id="vp_pause">pause</button>
+    </div>
     <img src="assets/images/frame-06/Cloud_transition_2.png" id="f6_Untitled_Artwork_4">
+    <div class="coaster-guide d-none">
+      <div id="vsec_1" class="coaster-guide__sec coaster-guide__sec--1 d-none">
+        <h2>Arkadia</h2>
+        <p>Solid GameFi leverage products built by a passionate and experienced in-house team of more than 30 blockchain
+          devs, crypto visionaries, financial analysts, designers, and game developers on the Blockchain.</p>
+        <button id="vp_btn_1">play 1</button>
+      </div>
+      <div id="vsec_2" class="coaster-guide__sec coaster-guide__sec--2 d-none">
+        <h2>Arkadia</h2>
+        <p>Solid GameFi leverage products built by a passionate and experienced in-house team of more than 30 blockchain
+          devs, crypto visionaries, financial analysts, designers, and game developers on the Blockchain.</p>
+        <button id="vp_btn_2">play 2</button>
+      </div>
+    </div>
 
+    <div class="video_progress">
+      <span id="vp_bar"><br /></span>
+    </div>
 
   </section>
 

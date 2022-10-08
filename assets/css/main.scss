@@ -194,8 +194,8 @@ section img {
 .hide {
   opacity: 0;
   // filter: blur(15px);
+  pointer-events: none;
 }
-
 
 
 

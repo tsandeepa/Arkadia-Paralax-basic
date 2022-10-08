@@ -1,0 +1,120 @@
+.sprite-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sprite-container img {
+  height: initial;
+  width: initial;
+}
+
+#van {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: right;
+     object-position: right;
+}
+
+.vbt-ph {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.coaster-guide {
+  position: absolute;
+  z-index: 20;
+  background: #3b3b3b4d;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.coaster-guide__sec {
+  background: #fff;
+  padding: 40px;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 218px;
+  margin-bottom: 96px;
+  opacity: 1;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  text-align: center;
+}
+
+.coaster-guide__sec h2 {
+  font-family: cinzel_bold;
+}
+
+.coaster-guide__sec p {
+  font-family: flanker;
+}
+
+.d-none {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.coaster-guide__sec.d-none {
+  -webkit-transform: translate(0, 50vw);
+          transform: translate(0, 50vw);
+}
+
+.video_progress {
+  display: block;
+  position: absolute;
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff6e;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  border-radius: 50px;
+}
+
+.video_progress #vp_bar {
+  background: #594163;
+  display: block;
+  height: 7px;
+  max-width: 100%;
+  border-radius: 50px;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+/*# sourceMappingURL=frames.css.map */
