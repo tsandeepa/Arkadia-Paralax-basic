@@ -23,7 +23,7 @@ menu_bg.addEventListener('click', () => {
 
 
 
-//frame 01 -----------------------------------------
+//Page Nav -----------------------------------------
 const windowHeight = window.innerHeight;
 const bodyHeight = document.querySelector('body').offsetHeight;
 const prgBar = document.querySelector('.prg-bar');
@@ -35,6 +35,17 @@ const li_ph_4 = document.querySelector('.li_ph_4');
 const li_ph_5 = document.querySelector('.li_ph_5');
 const li_ph_6 = document.querySelector('.li_ph_6');
 const li_ph_7 = document.querySelector('.li_ph_7');
+
+
+const li_bx_1 = document.getElementById('li_bx_1');
+const li_bx_2 = document.getElementById('li_bx_2');
+const li_bx_3 = document.getElementById('li_bx_3');
+const li_bx_4 = document.getElementById('li_bx_4');
+const li_bx_5 = document.getElementById('li_bx_5');
+const li_bx_6 = document.getElementById('li_bx_6');
+const li_bx_7 = document.getElementById('li_bx_7');
+
+
 
 
 console.log(bodyHeight);
@@ -203,12 +214,14 @@ fr_07.style.height = `calc(${frameSwap_7}px - ${frameSwap_6}px)`
 
 
 //section fade in animations
-
+let scroll_y;
 window.addEventListener('scroll', () => {
-  let scroll_y = window.scrollY;
-  // console.log(scroll_y);
+  scroll_y = window.scrollY;
+  console.log(scroll_y);
   // prgBar.style.height = `calc(100% - (${scroll_y} / ${bodyHeight} * 100%))`
   prgBar.style.height = `calc(${scroll_y} / (${bodyHeight} - ${windowHeight} ) * 100%)`
+
+
 
 
   if (scroll_y < frameSwap_1) {
@@ -217,6 +230,9 @@ window.addEventListener('scroll', () => {
     li_ph_4.style.height = '0%';
     li_ph_5.style.height = '0%';
     li_ph_1.style.height = `calc(${scroll_y} / (${frameSwap_1}) * 100%)`
+
+    //nav-box active class
+    li_bx_1.classList.add('active')
 
     //show FRAME 01 
     frame01.classList.remove('hide')
@@ -489,3 +505,4 @@ window.addEventListener('scroll', () => {
 
 
 })
+
