@@ -48,7 +48,6 @@ const li_bx_7 = document.getElementById('li_bx_7');
 
 
 
-console.log(bodyHeight);
 // frame 01--------------------------------------
 
 let frame01 = document.getElementById('frame-01')

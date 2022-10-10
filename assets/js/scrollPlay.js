@@ -37,7 +37,7 @@ const playVideo = () => {
 
   videoTimer = setInterval(() => {
     let playTime = (Math.round(f6_r1.currentTime));
-    console.log(playTime);
+    // console.log(playTime);
     if (playTime == 1) {
       vbt_ph.classList.add('hide')
     }
@@ -75,9 +75,9 @@ playBt.addEventListener('click', playVideo)
 
 coaster_guide.addEventListener('click', playVideo)
 
-pauseBt.addEventListener('click', () => {
-  f6_r1.pause()
-  clearInterval(videoTimer);
+// pauseBt.addEventListener('click', () => {
+//   f6_r1.pause()
+//   clearInterval(videoTimer);
 
-})
+// })
 
