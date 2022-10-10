@@ -108,7 +108,7 @@ header .join-links img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 42px 30px;
+  padding: 14px 30px;
   background: #3e374de3;
   top: 0;
   height: 100%;
@@ -177,7 +177,7 @@ header .join-links img {
 .nav-menu__sec ul li a {
   color: #F0E8F8;
   text-decoration: none;
-  padding: 15px 0;
+  padding: 8px 0;
   display: block;
 }
 
@@ -271,6 +271,7 @@ section {
 
 .text-layer h2 {
   font-family: cinzel_bold;
+  font-size: 43px;
 }
 
 .text-layer p {
@@ -387,7 +388,7 @@ section img {
 
 .text-layer h2 {
   font-weight: 500;
-  font-size: 5em;
+  font-size: 43px;
 }
 
 .text-layer p {
@@ -410,7 +411,7 @@ section img {
 
 .text-layer-center h2 {
   font-weight: 500;
-  font-size: 5em;
+  font-size: 43px;
 }
 
 .text-layer-center p {
