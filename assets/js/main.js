@@ -3,7 +3,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-//frame 01 -----------------------------------------
+//side menu
+const btn_menu = document.querySelector('.btn-menu')
+const nav_menu = document.querySelector('.nav-menu')
+const btn_menu_close = document.querySelector('.btn-menu-close')
+const menu_bg = document.querySelector('.menu-bg')
+
+btn_menu.addEventListener('click', () => {
+  nav_menu.classList.toggle('slide-in')
+})
+
+btn_menu_close.addEventListener('click', () => {
+  nav_menu.classList.remove('slide-in')
+})
+
+menu_bg.addEventListener('click', () => {
+  nav_menu.classList.remove('slide-in')
+})
+
+
+
+//Page Nav -----------------------------------------
 const windowHeight = window.innerHeight;
 const bodyHeight = document.querySelector('body').offsetHeight;
 const prgBar = document.querySelector('.prg-bar');
@@ -15,6 +35,17 @@ const li_ph_4 = document.querySelector('.li_ph_4');
 const li_ph_5 = document.querySelector('.li_ph_5');
 const li_ph_6 = document.querySelector('.li_ph_6');
 const li_ph_7 = document.querySelector('.li_ph_7');
+
+
+const li_bx_1 = document.getElementById('li_bx_1');
+const li_bx_2 = document.getElementById('li_bx_2');
+const li_bx_3 = document.getElementById('li_bx_3');
+const li_bx_4 = document.getElementById('li_bx_4');
+const li_bx_5 = document.getElementById('li_bx_5');
+const li_bx_6 = document.getElementById('li_bx_6');
+const li_bx_7 = document.getElementById('li_bx_7');
+
+
 
 
 console.log(bodyHeight);
@@ -47,6 +78,7 @@ let f2_city_tower_home = document.getElementById('f2-city-tower-home')
 let f2_fog_white_middle = document.getElementById('f2-fog-white-middle')
 let f2_entrance_center = document.getElementById('f2-entrance-center')
 let f2_entrance_gate = document.getElementById('f2-entrance-gate')
+let f2_flags = document.getElementById('f2-flags')
 let f2_glow_inside = document.getElementById('f2_glow_inside')
 let f2_entrance_right = document.getElementById('f2-entrance-right')
 let f2_front_lights = document.getElementById('f2-front-lights')
@@ -183,12 +215,14 @@ fr_07.style.height = `calc(${frameSwap_7}px - ${frameSwap_6}px)`
 
 
 //section fade in animations
-
+let scroll_y;
 window.addEventListener('scroll', () => {
-  let scroll_y = window.scrollY;
+  scroll_y = window.scrollY;
   // console.log(scroll_y);
   // prgBar.style.height = `calc(100% - (${scroll_y} / ${bodyHeight} * 100%))`
   prgBar.style.height = `calc(${scroll_y} / (${bodyHeight} - ${windowHeight} ) * 100%)`
+
+
 
 
   if (scroll_y < frameSwap_1) {
@@ -197,6 +231,9 @@ window.addEventListener('scroll', () => {
     li_ph_4.style.height = '0%';
     li_ph_5.style.height = '0%';
     li_ph_1.style.height = `calc(${scroll_y} / (${frameSwap_1}) * 100%)`
+
+    //nav-box active class
+    li_bx_1.classList.add('active')
 
     //show FRAME 01 
     frame01.classList.remove('hide')
@@ -345,9 +382,14 @@ window.addEventListener('scroll', () => {
     frame06.classList.add('hide')
     frame07.classList.remove('hide')
 
+    frame_01 = false;
+    frame_02 = false;
+    frame_03 = false;
+    frame_04 = false;
+    frame_05 = false;
     frame_06 = false;
     frame_07 = true;
-    // alert('s')
+
 
   }
 
@@ -373,6 +415,7 @@ window.addEventListener('scroll', () => {
     f2_entrance_right.style.transform = `scale(${1 + scroll_y * 0.0003500 - speedFactor})`;
     // f2_entrance_right.style.top = scroll_y * -0.08 + 'px';
     f2_entrance_gate.style.transform = `scale(${1 + scroll_y * 0.0002500 - speedFactor})`;
+    f2_flags.style.transform = `scale(${1 + scroll_y * 0.0002500 - speedFactor})`;
     // f2_entrance_gate.style.top = scroll_y * -0.05 + 'px';
     f2_entrance_center.style.transform = `scale(${1 + scroll_y * 0.0002000 - speedFactor})`;
     // f2_entrance_center.style.top = scroll_y * 0.02 + 'px';
@@ -420,17 +463,14 @@ window.addEventListener('scroll', () => {
     f4_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
 
   }
-  if (frame_05 && scroll_y > frameSwap_4 + 150) {
+  if (frame_05 && scroll_y > frameSwap_4) {
     scroll_y = scroll_y - frameSwap_4;
     let speedFactor = 0
-
-    f6_r1.pause()
-
+    // f6_r1.pause()
     f5_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
     f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
     f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00015900 - speedFactor})`;
     f5_Untitled_Artwork_5.style.transform = `scale(${1 + scroll_y * 0.00015700 - speedFactor})`;
-
     if ((scroll_y + frameSwap_4) > 6400) {
       frame05.style.transform = `translate(0,-30%)`;
       f5_Untitled_Artwork_16.style.transform = `translate(0,88%)`
@@ -452,14 +492,16 @@ window.addEventListener('scroll', () => {
       f5_Untitled_Artwork_17.style.transform = `translate(0,100%)`
     }
   }
-  if (frame06 && scroll_y > frameSwap_5) {
+  if (frame_06 && scroll_y > frameSwap_5) {
     scroll_y = scroll_y - frameSwap_5;
     //Animation - frame 06 slide up
     frame06.classList.add('f6-anim-fadeIn')
-    f6_r1.play()
     f6_Untitled_Artwork_4.style.transform = ' translate(0, -100%)'
   }
   if (frame_07 && scroll_y > frameSwap_6) {
+    // f6_r1.pause()
   }
 
+
 })
+
