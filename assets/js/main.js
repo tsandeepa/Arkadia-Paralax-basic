@@ -78,6 +78,7 @@ let f2_city_tower_home = document.getElementById('f2-city-tower-home')
 let f2_fog_white_middle = document.getElementById('f2-fog-white-middle')
 let f2_entrance_center = document.getElementById('f2-entrance-center')
 let f2_entrance_gate = document.getElementById('f2-entrance-gate')
+let f2_flags = document.getElementById('f2-flags')
 let f2_glow_inside = document.getElementById('f2_glow_inside')
 let f2_entrance_right = document.getElementById('f2-entrance-right')
 let f2_front_lights = document.getElementById('f2-front-lights')
@@ -217,7 +218,7 @@ fr_07.style.height = `calc(${frameSwap_7}px - ${frameSwap_6}px)`
 let scroll_y;
 window.addEventListener('scroll', () => {
   scroll_y = window.scrollY;
-  console.log(scroll_y);
+  // console.log(scroll_y);
   // prgBar.style.height = `calc(100% - (${scroll_y} / ${bodyHeight} * 100%))`
   prgBar.style.height = `calc(${scroll_y} / (${bodyHeight} - ${windowHeight} ) * 100%)`
 
@@ -414,6 +415,7 @@ window.addEventListener('scroll', () => {
     f2_entrance_right.style.transform = `scale(${1 + scroll_y * 0.0003500 - speedFactor})`;
     // f2_entrance_right.style.top = scroll_y * -0.08 + 'px';
     f2_entrance_gate.style.transform = `scale(${1 + scroll_y * 0.0002500 - speedFactor})`;
+    f2_flags.style.transform = `scale(${1 + scroll_y * 0.0002500 - speedFactor})`;
     // f2_entrance_gate.style.top = scroll_y * -0.05 + 'px';
     f2_entrance_center.style.transform = `scale(${1 + scroll_y * 0.0002000 - speedFactor})`;
     // f2_entrance_center.style.top = scroll_y * 0.02 + 'px';
@@ -464,14 +466,11 @@ window.addEventListener('scroll', () => {
   if (frame_05 && scroll_y > frameSwap_4) {
     scroll_y = scroll_y - frameSwap_4;
     let speedFactor = 0
-
-    f6_r1.pause()
-
+    // f6_r1.pause()
     f5_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
     f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00016000 - speedFactor})`;
     f5_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00015900 - speedFactor})`;
     f5_Untitled_Artwork_5.style.transform = `scale(${1 + scroll_y * 0.00015700 - speedFactor})`;
-
     if ((scroll_y + frameSwap_4) > 6400) {
       frame05.style.transform = `translate(0,-30%)`;
       f5_Untitled_Artwork_16.style.transform = `translate(0,88%)`
@@ -500,7 +499,7 @@ window.addEventListener('scroll', () => {
     f6_Untitled_Artwork_4.style.transform = ' translate(0, -100%)'
   }
   if (frame_07 && scroll_y > frameSwap_6) {
-    f6_r1.pause()
+    // f6_r1.pause()
   }
 
 

@@ -20,6 +20,12 @@
     transform: rotate(90deg);
   }
 }
+@mixin btn-link-hover {
+  transition: all 0.2s ease;
+  &:hover {
+    scale: 0.98;
+  }
+}
 
 @font-face {
   font-family: cinzel_reguralr;
@@ -86,17 +92,25 @@ header {
   }
 }
 
+.btn-link {
+  display: block;
+  @include btn-link-hover;
+}
+
 .nav-menu {
   position: fixed;
   z-index: 1000;
-  padding: 42px 20px;
-  background: #3E374D;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 30px;
+  background: #3e374de3;
   top: 0;
   height: 100%;
   width: 100%;
   max-width: 360px;
   transform: translate(-100%, 0);
   transition: all 0.4s ease;
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -111,6 +125,48 @@ header {
 
     }
   }
+  &__sec {
+    margin: 24px 0;
+    h4 {
+      font-size: 24px;
+      color: #FF7476;
+      font-family: flanker;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      font-family: flanker;
+      li {
+        a {
+          color: #F0E8F8;
+          text-decoration: none;
+          padding: 15px 0;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__sub-title {
+    font-size: 24px;
+    color: #FF7476;
+    font-family: flanker;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    a {
+      color: #A994CB;
+      font-size: 12px;
+      font-family: flanker;
+      text-decoration: none;
+    }
+  }
+}
+
+button {
+  transition: filter 0.3s ease;
 
 }
 
@@ -275,7 +331,7 @@ section img {
 .text-layer {
   position: absolute;
   z-index: 9000;
-  max-width: 400px;
+  max-width: 700px;
   top: 100px;
   left: 100px;
 
@@ -631,7 +687,7 @@ section img {
 #f6_Untitled_Artwork_4 {
   transform: translate(0, -55%);
   object-fit: fill;
-  transition: 2s ease;
+  transition: 2.6s ease;
 }
 
 .f6-anim-fadeIn {

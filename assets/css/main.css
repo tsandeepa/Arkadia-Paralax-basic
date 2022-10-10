@@ -88,11 +88,28 @@ header .join-links img {
   width: 100%;
 }
 
+.btn-link {
+  display: block;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.btn-link:hover {
+  scale: 0.98;
+}
+
 .nav-menu {
   position: fixed;
   z-index: 1000;
-  padding: 42px 20px;
-  background: #3E374D;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 42px 30px;
+  background: #3e374de3;
   top: 0;
   height: 100%;
   width: 100%;
@@ -139,6 +156,59 @@ header .join-links img {
 .nav-menu__top .btn-menu-close:hover {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+.nav-menu__sec {
+  margin: 24px 0;
+}
+
+.nav-menu__sec h4 {
+  font-size: 24px;
+  color: #FF7476;
+  font-family: flanker;
+}
+
+.nav-menu__sec ul {
+  list-style: none;
+  padding: 0;
+  font-family: flanker;
+}
+
+.nav-menu__sec ul li a {
+  color: #F0E8F8;
+  text-decoration: none;
+  padding: 15px 0;
+  display: block;
+}
+
+.nav-menu__sub-title {
+  font-size: 24px;
+  color: #FF7476;
+  font-family: flanker;
+}
+
+.nav-menu__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: auto;
+}
+
+.nav-menu__footer a {
+  color: #A994CB;
+  font-size: 12px;
+  font-family: flanker;
+  text-decoration: none;
+}
+
+button {
+  -webkit-transition: -webkit-filter 0.3s ease;
+  transition: -webkit-filter 0.3s ease;
+  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 }
 
 .nav-menu.slide-in .menu-bg {
@@ -310,7 +380,7 @@ section img {
 .text-layer {
   position: absolute;
   z-index: 9000;
-  max-width: 400px;
+  max-width: 700px;
   top: 100px;
   left: 100px;
 }
@@ -822,8 +892,8 @@ section img {
           transform: translate(0, -55%);
   -o-object-fit: fill;
      object-fit: fill;
-  -webkit-transition: 2s ease;
-  transition: 2s ease;
+  -webkit-transition: 2.6s ease;
+  transition: 2.6s ease;
 }
 
 .f6-anim-fadeIn {

@@ -27,10 +27,38 @@
 .vbt-ph {
   position: absolute;
   z-index: 20;
-  left: 50%;
   right: 50%;
   top: 50%;
+  left: 0;
+  width: 50%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 73px;
+  transform: translate(0, -50%);
+  transition: opacity 0.3s ease;
+  h2 {
+    font-family: cinzel_bold;
+    margin-bottom: 20px;
+    font-size: 63px;
+  }
+  #vp_play {
+    width: 300px;
+    display: block;
+    position: relative;
+    height: 48px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    img {
+      width: 100%;
+    }
+    &:hover {
+      scale: 0.98;
+    }
+  }
 }
 
 
@@ -44,11 +72,24 @@
   height: 100%;
   display: flex;
   gap: 20px;
-
   align-items: end;
   justify-content: center;
   transition: all 0.3s ease;
-
+  cursor: pointer;
+  &__start-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: cinzel_bold;
+    font-size: 28px;
+    animation: pulse 1.2s infinite;
+    p {
+      color: #00000082;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
   &__sec {
     background: #fff;
     padding: 40px;
@@ -70,9 +111,22 @@
       font-family: flanker;
     }
   }
-
+  &__sec.d-none {
+    position: absolute;
+  }
 }
-
+@keyframes pulse {
+  /* flame pulses */
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 
 .d-none {
@@ -96,7 +150,7 @@
   transform: translate(-50%, 0);
   border-radius: 50px;
   #vp_bar {
-    background: #594163;
+    background: #422b4c;
     display: block;
     height: 7px;
     max-width: 100%;

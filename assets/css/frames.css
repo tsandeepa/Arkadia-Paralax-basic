@@ -21,12 +21,54 @@
 .vbt-ph {
   position: absolute;
   z-index: 20;
-  left: 50%;
   right: 50%;
   top: 50%;
+  left: 0;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 73px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.vbt-ph h2 {
+  font-family: cinzel_bold;
+  margin-bottom: 20px;
+  font-size: 63px;
+}
+
+.vbt-ph #vp_play {
+  width: 300px;
+  display: block;
+  position: relative;
+  height: 48px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.vbt-ph #vp_play img {
+  width: 100%;
+}
+
+.vbt-ph #vp_play:hover {
+  scale: 0.98;
 }
 
 .coaster-guide {
@@ -47,6 +89,25 @@
           justify-content: center;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.coaster-guide__start-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: cinzel_bold;
+  font-size: 28px;
+  -webkit-animation: pulse 1.2s infinite;
+          animation: pulse 1.2s infinite;
+}
+
+.coaster-guide__start-over p {
+  color: #00000082;
+  font-size: 12px;
+  text-align: center;
 }
 
 .coaster-guide__sec {
@@ -84,6 +145,36 @@
   font-family: flanker;
 }
 
+.coaster-guide__sec.d-none {
+  position: absolute;
+}
+
+@-webkit-keyframes pulse {
+  /* flame pulses */
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  /* flame pulses */
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .d-none {
   visibility: hidden;
   opacity: 0;
@@ -109,7 +200,7 @@
 }
 
 .video_progress #vp_bar {
-  background: #594163;
+  background: #422b4c;
   display: block;
   height: 7px;
   max-width: 100%;
