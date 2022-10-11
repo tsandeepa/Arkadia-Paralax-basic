@@ -1,7 +1,15 @@
+const laoder = document.querySelector('.loading-view')
+
+window.addEventListener('load', () => {
+  laoder.classList.add('hide')
+})
+
 document.addEventListener("DOMContentLoaded", function () {
   f1_logo_lg.classList.add('anim-fadeIn')
 
 });
+
+
 
 //side menu
 const btn_menu = document.querySelector('.btn-menu')
