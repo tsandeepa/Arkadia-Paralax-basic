@@ -38,7 +38,7 @@ body {
 header {
   position: fixed;
   z-index: 999;
-  padding: 26px;
+  padding: 20px 26px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,8 +58,16 @@ header .join-links {
 }
 
 header .join-links img {
-  height: 50px;
+  height: 48px;
   cursor: pointer;
+}
+
+.ak-mobile {
+  display: none !important;
+}
+
+.lg-hide {
+  display: none !important;
 }
 
 .btn-menu {
@@ -128,8 +136,6 @@ header .join-links img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-filter: grayscale(0.5);
-          filter: grayscale(0.5);
   scale: 1.1;
 }
 
@@ -333,7 +339,7 @@ footer ul {
 }
 
 footer ul li img {
-  height: 56px;
+  height: 48px;
   cursor: pointer;
 }
 

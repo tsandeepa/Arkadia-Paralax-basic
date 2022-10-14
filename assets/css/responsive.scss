@@ -1,0 +1,152 @@
+@media only screen and (max-width: 768px) {
+  .ak-mobile{
+    display: block !important;
+  }
+  .sm-hide {
+    display: none !important;
+  }
+
+  .sm-show {
+    display: block !important;
+  }
+
+  .ak-view {
+    display: none;
+  }
+  .navigation{
+    display: none;
+  }
+
+  header {
+    padding: 12px 10px;
+  }
+
+  .sm-frame{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    .sf-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .sm-frame-text {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      h2 {
+        font-family: cinzel_bold;
+        font-size: 30px;
+        margin-bottom: 16px;
+      }
+      p {
+        font-family: flanker;
+        font-size: 14px;
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+    &--01{
+      .logo-text-sm {
+        position: absolute;
+        max-width: 370px;
+        z-index: 1;
+        left: 50%;
+        top: 100px;
+        transform: translate(-50%, 0);
+      } 
+      .sm-f1-space-ship{
+        position: absolute;
+        top: 33%;
+        left: 0%;
+      }
+    }
+    &--02 {
+      .sft-02 {
+        color: #4B3944;
+      }
+    }
+    &--03 , 
+    &--04{
+      .sft-03 {
+        color: #ffffff;
+      }
+    }
+    &--05 {
+      .sf-img-05 {
+        object-position: top;
+      }
+      .sft-05 {
+        top: 10%;
+        color: #ffffff;
+      }
+    }
+    &--06 {
+      display: flex;
+      align-items: baseline;
+      video {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+      }
+      
+      .vp-view{
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        h4 {
+          font-family: cinzel_bold;
+        }
+        button {
+          max-width: 300px;
+          margin: 0 auto;
+          background: transparent;
+          border: none;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .sm-f1-space-ship {
+    animation: shipHover 2s infinite alternate forwards;
+    width: 48%;
+  }
+
+  @keyframes shipHover {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-15px);
+    }
+  }
+
+  footer {
+     > ul {
+      padding: 0;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      ul {
+        padding: 0;
+      }
+      li {
+        img {
+          height: 37px;
+        }
+      }
+     }
+  }
+}

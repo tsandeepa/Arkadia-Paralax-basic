@@ -16,10 +16,14 @@ let vsec_2 = document.getElementById('vsec_2');
 let vp_bar = document.getElementById('vp_bar');
 
 let vbt_ph = document.querySelector('.vbt-ph');
+let vp_play_mobile = document.getElementById('vp_play_mobile');
 
 
 
+vp_play_mobile.addEventListener('click', () => {
+  f6_r1_mobile.play()
 
+})
 
 let videoTimer;
 let video_progres;
@@ -66,6 +70,8 @@ const playVideo = () => {
     }
   }, 1050);
 }
+
+
 
 playBt.addEventListener('click', playVideo)
 

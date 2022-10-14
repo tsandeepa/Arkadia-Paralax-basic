@@ -154,6 +154,7 @@ let frame06 = document.getElementById('frame-06')
 
 let f6_Untitled_Artwork_4 = document.getElementById('f6_Untitled_Artwork_4')
 let f6_r1 = document.getElementById('f6_r1')
+let f6_r1_mobile = document.getElementById('f6_r1_mobile')
 
 
 //frame 07 -----------------------------
