@@ -112,8 +112,7 @@
 }
 
 .coaster-guide__sec {
-  background: #fff;
-  padding: 40px;
+  padding: 75px;
   max-width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,6 +139,7 @@
 
 .coaster-guide__sec h2 {
   font-family: cinzel_bold;
+  color: #3E374D;
 }
 
 .coaster-guide__sec p {
@@ -187,6 +187,13 @@
           transform: translate(0, 50vw);
 }
 
+.coaster-guide__sec {
+  background-image: url("../images/frame-06/arkadia-paper.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .video_progress {
   display: block;
   position: absolute;
@@ -194,9 +201,7 @@
   max-width: 400px;
   background: #ffffff6e;
   bottom: 30px;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  left: 40px;
   border-radius: 50px;
 }
 
@@ -208,5 +213,15 @@
   border-radius: 50px;
   -webkit-transition: width 0.3s ease;
   transition: width 0.3s ease;
+}
+
+#f7_Untitled_Artwork_4 {
+  opacity: 1;
+  -webkit-transition: opacity 5s ease;
+  transition: opacity 5s ease;
+}
+
+.f7-ritual-started {
+  opacity: 0 !important;
 }
 /*# sourceMappingURL=frames.css.map */

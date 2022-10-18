@@ -16,6 +16,7 @@ const btn_menu = document.querySelector('.btn-menu')
 const nav_menu = document.querySelector('.nav-menu')
 const btn_menu_close = document.querySelector('.btn-menu-close')
 const menu_bg = document.querySelector('.menu-bg')
+const menu_sec = document.querySelector('.nav-menu__sec')
 
 btn_menu.addEventListener('click', () => {
   nav_menu.classList.toggle('slide-in')
@@ -28,6 +29,12 @@ btn_menu_close.addEventListener('click', () => {
 menu_bg.addEventListener('click', () => {
   nav_menu.classList.remove('slide-in')
 })
+
+menu_sec.addEventListener('click', () => {
+  nav_menu.classList.remove('slide-in')
+})
+
+
 
 
 
@@ -160,6 +167,8 @@ let f6_r1_mobile = document.getElementById('f6_r1_mobile')
 //frame 07 -----------------------------
 let frame07 = document.getElementById('frame-07')
 
+let ritual_desc = document.querySelector('.f7_text_content')
+
 
 
 // frame resets
@@ -222,16 +231,26 @@ const fr_07 = document.querySelector('.fr-07')
 fr_07.style.height = `calc(${frameSwap_7}px - ${frameSwap_6}px)`
 
 
+const throttle = (fn, delay) => {
+  let last = 0;
+  return (...args) => {
+    const now = new Date().getTime();
+    if (now - last < delay) {
+      return;
+    }
+    last = now;
+    return fn(...args)
+  }
+}
+
+
 //section fade in animations
 let scroll_y;
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', throttle(() => {
   scroll_y = window.scrollY;
   // console.log(scroll_y);
   // prgBar.style.height = `calc(100% - (${scroll_y} / ${bodyHeight} * 100%))`
   prgBar.style.height = `calc(${scroll_y} / (${bodyHeight} - ${windowHeight} ) * 100%)`
-
-
-
 
   if (scroll_y < frameSwap_1) {
     li_ph_2.style.height = '0%';
@@ -417,7 +436,7 @@ window.addEventListener('scroll', () => {
   // frame 02 animation
   if (frame_02 && scroll_y > frameSwap_1 + 150) {
     scroll_y = scroll_y - frameSwap_1;
-    let speedFactor = 0
+    let speedFactor = 0;
     f2_front_tower.style.transform = `scale(${1 + scroll_y * 0.0008000 - speedFactor})`;
     f2_front_lights.style.transform = `scale(${1 + scroll_y * 0.0004500 - speedFactor})`;
     f2_entrance_right.style.transform = `scale(${1 + scroll_y * 0.0003500 - speedFactor})`;
@@ -471,7 +490,7 @@ window.addEventListener('scroll', () => {
     f4_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
 
   }
-  if (frame_05 && scroll_y > frameSwap_4) {
+  if (frame_05 && scroll_y > frameSwap_4 + 150) {
     scroll_y = scroll_y - frameSwap_4;
     let speedFactor = 0
     // f6_r1.pause()
@@ -506,10 +525,12 @@ window.addEventListener('scroll', () => {
     frame06.classList.add('f6-anim-fadeIn')
     f6_Untitled_Artwork_4.style.transform = ' translate(0, -100%)'
   }
-  if (frame_07 && scroll_y > frameSwap_6) {
+  if (frame_07 && scroll_y > frameSwap_6 + 150) {
+    scroll_y = scroll_y - frameSwap_6;
+    ritual_desc.style.top = `calc(70% - ${scroll_y * 0.2}px)`;
     // f6_r1.pause()
   }
 
 
-})
+}, 12));
 

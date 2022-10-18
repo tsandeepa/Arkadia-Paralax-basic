@@ -83,6 +83,7 @@
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
+    background: #000;
   }
   .sm-frame--06 video {
     width: 100%;
