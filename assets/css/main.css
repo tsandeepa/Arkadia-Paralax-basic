@@ -1061,9 +1061,9 @@ section img {
 
 #frame-08-soon #btn_back_home {
   position: absolute;
-  background: #673c61;
+  background: #673c6191;
   padding: 10px 20px;
-  color: #fff;
+  color: #f1c4ff;
   font-size: 22px;
   z-index: 10;
   font-family: flanker;
