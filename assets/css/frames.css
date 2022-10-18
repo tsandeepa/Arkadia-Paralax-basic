@@ -209,4 +209,14 @@
   -webkit-transition: width 0.3s ease;
   transition: width 0.3s ease;
 }
+
+#f7_Untitled_Artwork_4 {
+  opacity: 1;
+  -webkit-transition: opacity 5s ease;
+  transition: opacity 5s ease;
+}
+
+.f7-ritual-started {
+  opacity: 0 !important;
+}
 /*# sourceMappingURL=frames.css.map */

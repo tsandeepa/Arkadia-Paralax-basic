@@ -87,3 +87,10 @@ coaster_guide.addEventListener('click', playVideo)
 
 // })
 
+
+const f7_base_ritual = document.getElementById('f7_Untitled_Artwork_4')
+const btn_ritual = document.getElementById('btn_ritual')
+
+btn_ritual.addEventListener('click', () => {
+  f7_base_ritual.classList.toggle('f7-ritual-started')
+})
