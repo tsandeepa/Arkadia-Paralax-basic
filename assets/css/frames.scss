@@ -91,8 +91,7 @@
     }
   }
   &__sec {
-    background: #fff;
-    padding: 40px;
+    padding: 75px;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -106,6 +105,7 @@
     text-align: center;
     h2 {
       font-family: cinzel_bold;
+      color: #3E374D;
     }
     p {
       font-family: flanker;
@@ -139,6 +139,13 @@
   transform: translate(0, 50vw);
 }
 
+.coaster-guide__sec {
+  background-image: url('../images/frame-06/arkadia-paper.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .video_progress {
   display: block;
   position: absolute;
@@ -146,8 +153,9 @@
   max-width: 400px;
   background: #ffffff6e;
   bottom: 30px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  left: 40px;
+  // left: 50%;
+  // transform: translate(-50%, 0);
   border-radius: 50px;
   #vp_bar {
     background: #422b4c;

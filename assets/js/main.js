@@ -16,6 +16,7 @@ const btn_menu = document.querySelector('.btn-menu')
 const nav_menu = document.querySelector('.nav-menu')
 const btn_menu_close = document.querySelector('.btn-menu-close')
 const menu_bg = document.querySelector('.menu-bg')
+const menu_sec = document.querySelector('.nav-menu__sec')
 
 btn_menu.addEventListener('click', () => {
   nav_menu.classList.toggle('slide-in')
@@ -28,6 +29,12 @@ btn_menu_close.addEventListener('click', () => {
 menu_bg.addEventListener('click', () => {
   nav_menu.classList.remove('slide-in')
 })
+
+menu_sec.addEventListener('click', () => {
+  nav_menu.classList.remove('slide-in')
+})
+
+
 
 
 
@@ -520,10 +527,10 @@ window.addEventListener('scroll', throttle(() => {
   }
   if (frame_07 && scroll_y > frameSwap_6 + 150) {
     scroll_y = scroll_y - frameSwap_6;
-    ritual_desc.style.top = `calc(50% - ${scroll_y * 0.00016000})`;
+    ritual_desc.style.top = `calc(70% - ${scroll_y * 0.2}px)`;
     // f6_r1.pause()
   }
 
 
-}, 5));
+}, 12));
 
