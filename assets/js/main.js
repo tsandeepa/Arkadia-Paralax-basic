@@ -170,6 +170,15 @@ let frame07 = document.getElementById('frame-07')
 let ritual_desc = document.querySelector('.f7_text_content')
 
 
+//frame 08 ---------------------------------
+
+let frame08 = document.getElementById('frame-08')
+
+
+
+
+
+
 
 // frame resets
 const frameRevert = (frame_no) => {
@@ -197,6 +206,7 @@ let frame_04;
 let frame_05;
 let frame_06;
 let frame_07;
+let frame_08;
 
 let frameSwap_1 = 690;
 let frameSwap_2 = 2000;
@@ -205,6 +215,7 @@ let frameSwap_4 = 5300;
 let frameSwap_5 = 7200;
 let frameSwap_6 = 8300;
 let frameSwap_7 = 9500;
+let frameSwap_8 = 10500;
 
 
 //navigation body section heights 
@@ -229,6 +240,11 @@ fr_06.style.height = `calc(${frameSwap_6}px - ${frameSwap_5}px)`
 
 const fr_07 = document.querySelector('.fr-07')
 fr_07.style.height = `calc(${frameSwap_7}px - ${frameSwap_6}px)`
+
+// const fr_08 = document.querySelector('.fr-08')
+// fr_08.style.height = `calc(${frameSwap_8}px - ${frameSwap_7}px)`
+
+
 
 
 const throttle = (fn, delay) => {
@@ -408,6 +424,8 @@ window.addEventListener('scroll', throttle(() => {
     frame05.classList.add('hide')
     frame06.classList.add('hide')
     frame07.classList.remove('hide')
+    frame08.classList.add('hide')
+
 
     frame_01 = false;
     frame_02 = false;
@@ -418,6 +436,25 @@ window.addEventListener('scroll', throttle(() => {
     frame_07 = true;
 
 
+  } else if (scroll_y > frameSwap_7 && scroll_y < frameSwap_8) {
+    frame01.classList.add('hide')
+    frame02.classList.add('hide')
+    frame03.classList.add('hide')
+    frame04.classList.add('hide')
+    frame05.classList.add('hide')
+    frame06.classList.add('hide')
+    frame07.classList.add('hide')
+    frame08.classList.remove('hide')
+
+
+    frame_01 = false;
+    frame_02 = false;
+    frame_03 = false;
+    frame_04 = false;
+    frame_05 = false;
+    frame_06 = false;
+    frame_07 = false;
+    frame_08 = true;
   }
 
   sc_val.innerHTML = scroll_y;
@@ -527,9 +564,13 @@ window.addEventListener('scroll', throttle(() => {
   }
   if (frame_07 && scroll_y > frameSwap_6 + 150) {
     scroll_y = scroll_y - frameSwap_6;
-    ritual_desc.style.top = `calc(70% - ${scroll_y * 0.2}px)`;
+    ritual_desc.style.top = `calc(75% - ${scroll_y * 0.15}px)`;
     // f6_r1.pause()
   }
+  if (frame_08 && scroll_y > frameSwap_7 + 150) {
+    console.log('view footer');
+  }
+
 
 
 }, 12));

@@ -68,7 +68,7 @@ html {
 
 body {
   // background: #3e3e3e;
-  height: 10500px;
+  // height: 10500px;
   // overflow: hidden;
   font-family: 'Roboto', sans-serif;
   background: rgb(229, 229, 229);
@@ -171,7 +171,19 @@ button {
   max-width: 360px;
   transform: translate(-100%, 0);
   transition: all 0.4s ease;
+  overflow-y: scroll;
+  overflow-x: clip;
 
+  &::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #2f2543e3;    /* color of the scroll thumb */
+    border: 3px solid transparent;  /* creates padding around scroll thumb */
+  }
   &__top {
     display: flex;
     justify-content: space-between;
@@ -183,7 +195,8 @@ button {
     .btn-menu-close {
       @include btn;
       width: 65px;
-
+      position: fixed;
+      right: 20px;
     }
   }
   &__sec {
@@ -326,6 +339,7 @@ section {
   }
   p {
     font-family: flanker;
+    font-size: 20px;
   }
 }
 
@@ -342,7 +356,7 @@ section {
   position: absolute;
   width: 600px;
   height: 600px;
-  right: 130px;
+  right: 83px;
   transform: translate(0, -50%);
   transition: top 0.5s ease;
   top: 70%;
@@ -350,18 +364,18 @@ section {
     // transform: scale(0.75) translate(157px, 14px);
     object-fit: cover;
     object-position: right;
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
   .f7_paper_text {
     position: absolute;
-    right: 25px;
+    right: 57px;;
     max-width: 335px;
     top: 40%;
     transform: translate(0, -50%);
     color: #3E374D;
     h2 {
       font-family: cinzel_bold;
-      font-size: 3em;
+      font-size: 2.2em;
     }
     p {
       font-family: flanker;
@@ -369,6 +383,7 @@ section {
       line-height: 1.5;
       margin-top: 20px;
       font-weight: 400;
+      max-width: 300px;
     }
 
     button {
@@ -377,6 +392,10 @@ section {
 
   }
 
+}
+
+#btn_ritual {
+  max-width: 300px;
 }
 
 .f2-text-layer {
@@ -445,7 +464,7 @@ section img {
   }
 
   p {
-    font-size: 17px;
+    font-size: 20px;
     line-height: 1.5;
     margin-top: 20px;
     font-weight: 400;
@@ -496,8 +515,8 @@ section img {
     transform: translate(50%, 0);
     &::after {
       // content: '';
-      width: 10px;
-      height: 10px;
+      width: 7px;
+      height: 7px;
       border-radius: 10px;
       background: rgb(232, 55, 167);
       position: absolute;
@@ -520,6 +539,7 @@ section img {
       position: relative;
       a {
         list-style: none;
+        text-transform: uppercase;
         text-decoration: none;
         padding: 10px;
         display: block;
@@ -553,7 +573,7 @@ section img {
 
         }
         span {
-          background: #1d212b;
+          background: #f4f4f43b;
           width: 10px;
           height: 10px;
           transform: rotate(45deg);
@@ -587,9 +607,9 @@ section img {
           position: absolute;
           display: block;
           top: 0;
-          width: 2px;
+          width: 1px;
           left: 50%;
-          background: #ffffff;
+          background: #b8b8b8;
           transform: translate(-50%, 0);
         }
       }
@@ -847,3 +867,91 @@ section img {
     top: 78%;
   }
 }
+
+#frame-08 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .f8_footer_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+
+  .foot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(-15%);
+    .f8_foot_logo {
+      position: relative;
+      z-index: 1;
+      max-width: 300px;
+      object-fit: contain;
+      height: auto;
+    }
+    .foot-links{
+      position: relative;
+      padding: 20px 130px;
+      background-image: url(../../assets/images/footer/menu-bg.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      .fl-borders{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+      .fl-top {
+        top: -28px;
+      }
+      .fl-bottom {
+        bottom: -8px;
+        top: initial;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        padding: 20px 0;
+        gap: 54px;
+        li {
+          font-family: flanker;
+          color: #383976;
+          cursor: pointer;
+          position: relative;
+          transition: all 0.3s ease;
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            width: 20px;
+            height: 20px;
+            scale: 0.7;
+            opacity: 0.3;
+            background-image: url(../images/menu-item-hover.svg);
+          }
+          &:hover {
+            color: #000000;
+            &::before {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+
