@@ -291,7 +291,7 @@ window.addEventListener('scroll', throttle(() => {
     frame_03 = false;
     frame_04 = false;
     frame_05 = false;
-    frameRevert('02')
+    // frameRevert('02')
     // frameImgVisibility('01')
 
     //Frame 01 - Fades
@@ -526,6 +526,16 @@ window.addEventListener('scroll', throttle(() => {
     f4_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00000800 - speedFactor})`;
     f4_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
 
+    if ((scroll_y + frameSwap_3) > 4500) {
+      frame04.style.transform = `translate(0%,-50%)`;
+      if ((scroll_y + frameSwap_3) > 5100) {
+        frame04.style.transform = `translate(0%,-80%)`;
+
+      }
+    } else {
+      frame04.style.transform = `translate(0, 0)`;
+    }
+
   }
   if (frame_05 && scroll_y > frameSwap_4 + 150) {
     scroll_y = scroll_y - frameSwap_4;
@@ -566,6 +576,12 @@ window.addEventListener('scroll', throttle(() => {
     scroll_y = scroll_y - frameSwap_6;
     ritual_desc.style.top = `calc(75% - ${scroll_y * 0.15}px)`;
     // f6_r1.pause()
+    if ((scroll_y + frameSwap_6) > 9300) {
+      frame07.style.transform = `translate(0%,-80%)`;
+    } else {
+      frame07.style.transform = `translate(0, 0)`;
+    }
+
   }
   if (frame_08 && scroll_y > frameSwap_7 + 150) {
     console.log('view footer');
