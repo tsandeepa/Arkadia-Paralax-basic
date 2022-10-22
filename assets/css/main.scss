@@ -378,7 +378,7 @@ section {
     transition: height 5s ease;
     height: 476px;
     width: 345px;
-    background: #19a3a55e;
+    background: #e7ff515e;
     position: absolute;
     right: 38px;
     bottom: 77px;
@@ -678,10 +678,10 @@ section img {
 }
 
 .sec-nav {
+  z-index: 0;
   opacity: 0;
   background: #6767674a;
   position: absolute;
-  z-index: 100;
   color: #fff;
   padding: 0 5px;
   >div {
@@ -749,6 +749,29 @@ section img {
 
 #frame-04 {
   transition: all 1s ease;
+}
+
+.anim-ease-sc.hide {
+  #f5_Untitled_Artwork_18 {
+    transform: translateY(-22%);
+  }
+}
+
+#f4_Untitled_Artwork_16 {
+  height: 165vh;
+  object-fit: cover;
+  transform: translateY(3%);
+}
+
+#f4_Untitled_Artwork_17 {
+  height: 165vh;
+  object-fit: cover;
+  transform: translateY(11%);
+}
+
+#f5_Untitled_Artwork_18 {
+  transition: 2s ease;
+  transform: translateY(-50%);
 }
 
 #f5_Untitled_Artwork_16 {
@@ -878,6 +901,11 @@ section img {
 }
 
 
+.f8_footer_top {
+  transform: translateY(-100%);
+}
+
+
 
 .anim-fadeIn {
   transform: translate(0, 0) scale(1);
@@ -915,13 +943,13 @@ section img {
   transform: translateY(30%);
 }
 
-#f7_ground_2 {
-  transform: translateY(49%);
+#f7_ground_3 {
+  transform: translateY(11%);
+  height: 141vh;
 }
 
-#frame-08.hide {
+#frame-08.slide-fv {
   transform: translateY(70%);
-  opacity: 0;
 }
 
 #frame-08 {
@@ -930,7 +958,7 @@ section img {
   justify-content: center;
   opacity: 1;
   transition: 1s ease;
-  transform: translateY(0);
+  transform: translateY(100%);
 
   .f8_footer_bg {
     position: absolute;
@@ -1009,4 +1037,8 @@ section img {
   }
 
 
+}
+
+.slide-fv-done {
+  transform: translateY(0) !important;
 }

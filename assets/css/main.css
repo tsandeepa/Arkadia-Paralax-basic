@@ -439,7 +439,7 @@ section {
   transition: height 5s ease;
   height: 476px;
   width: 345px;
-  background: #19a3a55e;
+  background: #e7ff515e;
   position: absolute;
   right: 38px;
   bottom: 77px;
@@ -757,10 +757,10 @@ section img {
 }
 
 .sec-nav {
+  z-index: 0;
   opacity: 0;
   background: #6767674a;
   position: absolute;
-  z-index: 100;
   color: #fff;
   padding: 0 5px;
 }
@@ -873,6 +873,34 @@ section img {
 #frame-04 {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+}
+
+.anim-ease-sc.hide #f5_Untitled_Artwork_18 {
+  -webkit-transform: translateY(-22%);
+          transform: translateY(-22%);
+}
+
+#f4_Untitled_Artwork_16 {
+  height: 165vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: translateY(3%);
+          transform: translateY(3%);
+}
+
+#f4_Untitled_Artwork_17 {
+  height: 165vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: translateY(11%);
+          transform: translateY(11%);
+}
+
+#f5_Untitled_Artwork_18 {
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 #f5_Untitled_Artwork_16 {
@@ -1091,6 +1119,11 @@ section img {
           animation: pulse 2.5s infinite alternate ease;
 }
 
+.f8_footer_top {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
 .anim-fadeIn {
   -webkit-transform: translate(0, 0) scale(1);
           transform: translate(0, 0) scale(1);
@@ -1139,15 +1172,15 @@ section img {
           transform: translateY(30%);
 }
 
-#f7_ground_2 {
-  -webkit-transform: translateY(49%);
-          transform: translateY(49%);
+#f7_ground_3 {
+  -webkit-transform: translateY(11%);
+          transform: translateY(11%);
+  height: 141vh;
 }
 
-#frame-08.hide {
+#frame-08.slide-fv {
   -webkit-transform: translateY(70%);
           transform: translateY(70%);
-  opacity: 0;
 }
 
 #frame-08 {
@@ -1163,8 +1196,8 @@ section img {
   opacity: 1;
   -webkit-transition: 1s ease;
   transition: 1s ease;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
 
 #frame-08 .f8_footer_bg {
@@ -1264,5 +1297,10 @@ section img {
 #frame-08 .foot-container .foot-links ul li:hover::before {
   visibility: visible;
   opacity: 1;
+}
+
+.slide-fv-done {
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
 }
 /*# sourceMappingURL=main.css.map */

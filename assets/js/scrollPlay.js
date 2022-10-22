@@ -244,3 +244,5 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.7 })
 
 observer.observe(sm_footer)
+
+
