@@ -1,6 +1,7 @@
 @media only screen and (max-width: 768px) {
   .ak-mobile {
     display: block !important;
+    overflow: hidden;
   }
   .sm-hide {
     display: none !important;
@@ -56,6 +57,7 @@
     font-size: 14px;
     max-width: 80%;
     margin: 0 auto;
+    line-height: 2;
   }
   .sm-frame .frame-end {
     position: absolute;
@@ -72,7 +74,10 @@
     bottom: -29px;
   }
   .sm-frame .fe--2 {
-    bottom: -64px;
+    bottom: -94px;
+    -o-object-fit: none;
+       object-fit: none;
+    scale: 1.1;
   }
   .sm-frame .fe--3 {
     bottom: -50px;
@@ -99,7 +104,7 @@
   }
   .sm-frame--02 .sft-02 {
     color: #4B3944;
-    top: 28%;
+    top: 18%;
   }
   .sm-frame--03 .sft-03, .sm-frame--04 .sft-03 {
     color: #ffffff;
@@ -110,8 +115,11 @@
        object-position: top;
   }
   .sm-frame--05 .sft-05 {
-    top: 10%;
+    top: 4%;
     color: #ffffff;
+  }
+  .sm-frame--05 .sft-05 p {
+    max-width: 87%;
   }
   .sm-frame--06 {
     display: -webkit-box;
@@ -147,6 +155,11 @@
     border: none;
   }
   .sm-frame--06 .vp-view button img {
+    width: 100%;
+  }
+  .sm-frame--07 .sm-f7-bottom {
+    position: absolute;
+    bottom: -14px;
     width: 100%;
   }
   .mobile-footer {

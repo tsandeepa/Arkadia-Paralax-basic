@@ -14,21 +14,21 @@ const playBgTheme = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   f1_logo_lg.classList.add('anim-fadeIn')
-  playBgTheme()
+  // playBgTheme()
 });
 
 
 
-audio_mute.addEventListener('click', () => {
-  console.log(arkadia_audio.muted);
-  arkadia_audio.muted ?
-    (
-      arkadia_audio.muted = false
-    ) :
-    (
-      arkadia_audio.muted = true
-    );
-})
+// audio_mute.addEventListener('click', () => {
+//   console.log(arkadia_audio.muted);
+//   arkadia_audio.muted ?
+//     (
+//       arkadia_audio.muted = false
+//     ) :
+//     (
+//       arkadia_audio.muted = true
+//     );
+// })
 
 
 //side menu
@@ -40,18 +40,25 @@ const menu_sec = document.querySelector('.nav-menu__sec')
 
 btn_menu.addEventListener('click', () => {
   nav_menu.classList.toggle('slide-in')
+  menu_bg.classList.toggle('slide-in')
 })
 
 btn_menu_close.addEventListener('click', () => {
   nav_menu.classList.remove('slide-in')
+  menu_bg.classList.remove('slide-in')
+
 })
 
 menu_bg.addEventListener('click', () => {
   nav_menu.classList.remove('slide-in')
+  menu_bg.classList.remove('slide-in')
+
 })
 
 menu_sec.addEventListener('click', () => {
   nav_menu.classList.remove('slide-in')
+  menu_bg.classList.remove('slide-in')
+
 })
 
 
@@ -286,7 +293,8 @@ window.addEventListener('scroll', throttle(() => {
   scroll_y = window.scrollY;
 
   if (scroll_y > 0) {
-    playBgTheme()
+    // playBgTheme()
+
 
   }
   // console.log(scroll_y);

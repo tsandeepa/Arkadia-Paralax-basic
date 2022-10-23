@@ -48,7 +48,7 @@
 
 @font-face {
   font-family: cinzel_bold;
-  src: url('../fonts/cinzel.decorative-bold.ttf');
+  src: url('../fonts/Cinzel-Bold.otf');
 }
 
 * {
@@ -172,7 +172,7 @@ button {
   transform: translate(-100%, 0);
   transition: all 0.4s ease;
   overflow-y: scroll;
-  overflow-x: clip;
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 5px;
@@ -282,20 +282,26 @@ button {
 
 
 
-.nav-menu.slide-in {
-  .menu-bg {
-    position: absolute;
-    width: 100vw;
-    height: 100%;
-    background: #6e045f;
-    background: linear-gradient(90deg, #6e045f 0%, rgba(208, 80, 80, 0) 100%);
-    z-index: -1;
-    top: 0;
-    left: 360px;
-    right: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
+.nav-menu.slide-in {}
+
+.menu-bg {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  background: #6e045f;
+  // background: linear-gradient(90deg, #6e045f 0%, rgba(208, 80, 80, 0) 100%);
+  z-index: 1;
+  top: 0;
+  left: 360px;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.menu-bg.slide-in {
+  z-index: 1000;
+  display: block;
 
 }
 
@@ -336,16 +342,7 @@ section {
   transition: all 1s ease;
 }
 
-.text-layer {
-  h2 {
-    font-family: cinzel_bold;
-    font-size: 43px;
-  }
-  p {
-    font-family: flanker;
-    font-size: 20px;
-  }
-}
+
 
 .text-layer-center {
   h2 {
@@ -353,6 +350,7 @@ section {
   }
   p {
     font-family: flanker;
+
   }
 }
 
@@ -401,7 +399,11 @@ section {
     z-index: 2;
     h2 {
       font-family: cinzel_bold;
-      font-size: 2.2em;
+      font-size: 31px;
+    }
+    h3 {
+      font-family: cinzel_bold;
+      font-size: 19px;
     }
     p {
       font-family: flanker;
@@ -464,6 +466,7 @@ section img {
   object-fit: cover;
   transition: all 0.5s linear;
   pointer-events: none;
+  user-select: none;
 }
 
 
@@ -491,15 +494,16 @@ section img {
   left: 100px;
 
   h2 {
+    font-family: cinzel_bold;
     font-weight: 500;
     font-size: 43px;
   }
 
   p {
-    font-size: 20px;
-    line-height: 1.5;
+    font-family: flanker;
+    font-size: 17px;
+    line-height: 1.7;
     margin-top: 20px;
-    font-weight: 400;
   }
 
 }
@@ -598,10 +602,10 @@ section img {
           overflow: hidden;
           color: #000;
           font-family: flanker;
-          font-size: 18px;
+          font-size: 14px;
           background: #fff;
           background: linear-gradient(270deg, #d9d9d900 0%, #ffffff96 1%, #ffffff8c 72.4%, #ffffff00 100%);
-          padding: 10px 70px 10px 0;
+          padding: 14px 70px 10px 0;
 
         }
         span {
@@ -725,6 +729,23 @@ section img {
   }
   100% {
     transform: translateY(-15px);
+  }
+}
+
+//frame 02
+
+.f2_flag_conainer {
+  background: #20522075;
+  position: relative;
+  height: 100vh;
+  .f2_flag_right {
+    position: absolute;
+    max-width: 161px;
+    object-fit: contain;
+    right: 34%;
+    top: 38%;
+    height: auto;
+    left: inherit;
   }
 }
 
@@ -979,9 +1000,10 @@ section img {
     .f8_foot_logo {
       position: relative;
       z-index: 1;
-      max-width: 300px;
+      max-width: 432px;
       object-fit: contain;
       height: auto;
+      margin-bottom: 25px;
     }
     .foot-links {
       position: relative;
