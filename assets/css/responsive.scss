@@ -1,6 +1,7 @@
 @media only screen and (max-width: 768px) {
-  .ak-mobile{
+  .ak-mobile {
     display: block !important;
+    overflow: hidden;
   }
   .sm-hide {
     display: none !important;
@@ -13,13 +14,13 @@
   .ak-view {
     display: none;
   }
-  .navigation{
+  .navigation {
     display: none;
   }
 
   header {
     padding: 12px 10px;
-    > div{
+    >div {
       width: 100%;
       display: flex;
     }
@@ -28,7 +29,7 @@
     }
   }
 
-  .sm-frame{
+  .sm-frame {
     height: 100vh;
     width: 100%;
     position: relative;
@@ -55,6 +56,7 @@
         font-size: 14px;
         max-width: 80%;
         margin: 0 auto;
+        line-height: 2;
       }
     }
 
@@ -68,12 +70,24 @@
       object-fit: cover;
       z-index: 20;
     }
-    .fe--1 {bottom: -29px;}
-    .fe--2 {bottom: -64px;}
-    .fe--3 {bottom: -50px;}
-    .fe--4 {bottom: -17px;}
-    .fe--5 {bottom: -125px;}
-    &--01{
+    .fe--1 {
+      bottom: -29px;
+    }
+    .fe--2 {
+      bottom: -94px;
+      object-fit: none;
+      scale: 1.1;
+    }
+    .fe--3 {
+      bottom: -50px;
+    }
+    .fe--4 {
+      bottom: -17px;
+    }
+    .fe--5 {
+      bottom: -125px;
+    }
+    &--01 {
       .logo-text-sm {
         position: absolute;
         max-width: 370px;
@@ -81,8 +95,8 @@
         left: 50%;
         top: 100px;
         transform: translate(-50%, 0);
-      } 
-      .sm-f1-space-ship{
+      }
+      .sm-f1-space-ship {
         position: absolute;
         top: 33%;
         left: 0%;
@@ -91,11 +105,11 @@
     &--02 {
       .sft-02 {
         color: #4B3944;
-        top: 28%;
+        top: 18%;
       }
     }
-    &--03 , 
-    &--04{
+    &--03,
+    &--04 {
       .sft-03 {
         color: #ffffff;
         top: 17%;
@@ -106,8 +120,13 @@
         object-position: top;
       }
       .sft-05 {
-        top: 10%;
+        top: 4%;
         color: #ffffff;
+      }
+      .sft-05 {
+        p {
+          max-width: 87%;
+        }
       }
     }
     &--06 {
@@ -119,8 +138,8 @@
         height: 100%;
         object-fit: cover;
       }
-      
-      .vp-view{
+
+      .vp-view {
         position: absolute;
         z-index: 1;
         top: 30%;
@@ -135,7 +154,7 @@
           margin: 0 auto;
           background: transparent;
           border: none;
-          img{
+          img {
             width: 100%;
           }
         }
@@ -143,6 +162,12 @@
     }
 
     &--07 {
+
+      .sm-f7-bottom {
+        position: absolute;
+        bottom: -14px;
+        width: 100%;
+      }
 
     }
 
@@ -155,12 +180,12 @@
       width: 100%;
       display: block;
     }
-    .foot-top{
+    .foot-top {
       position: absolute;
       top: -58px;
       z-index: 20;
     }
-    .footer-opt{
+    .footer-opt {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -191,7 +216,7 @@
     opacity: 0;
     transform: translateY(50%);
     transition: all 0.5s ease;
-     > ul {
+    >ul {
       padding: 0;
       flex-direction: column-reverse;
       justify-content: center;
@@ -204,7 +229,7 @@
           height: 37px;
         }
       }
-     }
+    }
   }
 
   .foot-sm-fade-in {
@@ -218,7 +243,7 @@
 
 //mobile coaster guide
 
-.f6_info_view{
+.f6_info_view {
   display: block;
   position: absolute;
   top: 0;
@@ -235,11 +260,11 @@
   gap: 10px;
 }
 
-.f6_if_box.d-none{
+.f6_if_box.d-none {
   transform: translateX(-100%);
   opacity: 0;
 }
-.f6_if_box{
+.f6_if_box {
   transform: translateX(0);
   opacity: 1;
   background: #fcd59de6;
@@ -259,9 +284,9 @@
 
 .mb_video_thumnail {
   position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
 }

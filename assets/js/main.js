@@ -1,14 +1,34 @@
 const laoder = document.querySelector('.loading-view')
 
+const arkadia_audio = document.getElementById('arkadia_audio')
+const audio_mute = document.getElementById('audio_mute')
+
 window.addEventListener('load', () => {
   laoder.classList.add('hide')
 })
 
+const playBgTheme = () => {
+  arkadia_audio.play()
+  arkadia_audio.loop = true;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   f1_logo_lg.classList.add('anim-fadeIn')
-
+  // playBgTheme()
 });
 
+
+
+// audio_mute.addEventListener('click', () => {
+//   console.log(arkadia_audio.muted);
+//   arkadia_audio.muted ?
+//     (
+//       arkadia_audio.muted = false
+//     ) :
+//     (
+//       arkadia_audio.muted = true
+//     );
+// })
 
 
 //side menu
@@ -20,18 +40,25 @@ const menu_sec = document.querySelector('.nav-menu__sec')
 
 btn_menu.addEventListener('click', () => {
   nav_menu.classList.toggle('slide-in')
+  menu_bg.classList.toggle('slide-in')
 })
 
 btn_menu_close.addEventListener('click', () => {
   nav_menu.classList.remove('slide-in')
+  menu_bg.classList.remove('slide-in')
+
 })
 
 menu_bg.addEventListener('click', () => {
   nav_menu.classList.remove('slide-in')
+  menu_bg.classList.remove('slide-in')
+
 })
 
 menu_sec.addEventListener('click', () => {
   nav_menu.classList.remove('slide-in')
+  menu_bg.classList.remove('slide-in')
+
 })
 
 
@@ -214,7 +241,7 @@ let frameSwap_3 = 3500;
 let frameSwap_4 = 5300;
 let frameSwap_5 = 7200;
 let frameSwap_6 = 8300;
-let frameSwap_7 = 9500;
+let frameSwap_7 = 9800;
 let frameSwap_8 = 10500;
 
 
@@ -264,6 +291,12 @@ const throttle = (fn, delay) => {
 let scroll_y;
 window.addEventListener('scroll', throttle(() => {
   scroll_y = window.scrollY;
+
+  if (scroll_y > 0) {
+    // playBgTheme()
+
+
+  }
   // console.log(scroll_y);
   // prgBar.style.height = `calc(100% - (${scroll_y} / ${bodyHeight} * 100%))`
   prgBar.style.height = `calc(${scroll_y} / (${bodyHeight} - ${windowHeight} ) * 100%)`
@@ -291,7 +324,7 @@ window.addEventListener('scroll', throttle(() => {
     frame_03 = false;
     frame_04 = false;
     frame_05 = false;
-    frameRevert('02')
+    // frameRevert('02')
     // frameImgVisibility('01')
 
     //Frame 01 - Fades
@@ -425,6 +458,8 @@ window.addEventListener('scroll', throttle(() => {
     frame06.classList.add('hide')
     frame07.classList.remove('hide')
     frame08.classList.add('hide')
+    frame08.classList.remove('slide-fv-done')
+
 
 
     frame_01 = false;
@@ -444,7 +479,7 @@ window.addEventListener('scroll', throttle(() => {
     frame05.classList.add('hide')
     frame06.classList.add('hide')
     frame07.classList.add('hide')
-    frame08.classList.remove('hide')
+    frame08.classList.add('slide-fv-done')
 
 
     frame_01 = false;
@@ -526,6 +561,16 @@ window.addEventListener('scroll', throttle(() => {
     f4_Untitled_Artwork_2.style.transform = `scale(${1 + scroll_y * 0.00000800 - speedFactor})`;
     f4_Untitled_Artwork_1.style.transform = `scale(${1 + scroll_y * 0.00006000 - speedFactor})`;
 
+    if ((scroll_y + frameSwap_3) > 4500) {
+      frame04.style.transform = `translate(0%,-50%)`;
+      if ((scroll_y + frameSwap_3) > 5100) {
+        frame04.style.transform = `translate(0%,-80%)`;
+
+      }
+    } else {
+      frame04.style.transform = `translate(0, 0)`;
+    }
+
   }
   if (frame_05 && scroll_y > frameSwap_4 + 150) {
     scroll_y = scroll_y - frameSwap_4;
@@ -566,9 +611,23 @@ window.addEventListener('scroll', throttle(() => {
     scroll_y = scroll_y - frameSwap_6;
     ritual_desc.style.top = `calc(75% - ${scroll_y * 0.15}px)`;
     // f6_r1.pause()
+    if ((scroll_y + frameSwap_6) > 9300) {
+      frame07.style.transform = `translate(0%,-80%)`;
+      frame08.classList.remove('hide')
+      frame08.classList.add('slide-fv')
+
+      if ((scroll_y + frameSwap_6) > 9500) {
+      }
+    } else {
+      frame07.style.transform = `translate(0, 0)`;
+      frame08.classList.remove('slide-fv')
+
+    }
+
   }
   if (frame_08 && scroll_y > frameSwap_7 + 150) {
     console.log('view footer');
+
   }
 
 
