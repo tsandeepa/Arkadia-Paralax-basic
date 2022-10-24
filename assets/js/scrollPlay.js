@@ -102,7 +102,9 @@ vp_play_mobile.addEventListener('click', () => {
 
 })
 
-
+const cgs_continue = document.querySelector('.cgs_continue');
+const cgs_start = document.querySelector('.cgs_start');
+const ended_next_section = document.querySelector('.ended-next-section');
 
 //dektop video------
 let videoTimer;
@@ -116,6 +118,8 @@ setInterval(() => {
 
 
 const playVideo = () => {
+  ended_next_section.classList.add('hide')
+
   f6_r1.play()
   coaster_guide.classList.add('d-none')
 
@@ -136,6 +140,8 @@ const playVideo = () => {
       vsec_2.classList.add('d-none')
       vsec_3.classList.add('d-none')
       vsec_4.classList.add('d-none')
+      cgs_continue.classList.remove('hide')
+
     }
     if (playTime == 6) {
       f6_r1.pause()
@@ -176,6 +182,9 @@ const playVideo = () => {
       vsec_4.classList.remove('d-none')
       clearInterval(video_progres);
       clearInterval(videoTimer);
+      vbt_ph.classList.remove('hide')
+      cgs_continue.classList.add('hide')
+      ended_next_section.classList.remove('hide')
     }
   }, 1050);
 }
@@ -216,6 +225,7 @@ const btn_back_home = document.getElementById('btn_back_home')
 view_coming_soon.forEach((item) => {
   item.addEventListener('click', () => {
     sec_nav_right.classList.add('hide');
+    console.log(f8_coming_soon);
     f8_coming_soon.classList.remove('hide')
   })
 })

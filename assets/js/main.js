@@ -2,9 +2,11 @@ const laoder = document.querySelector('.loading-view')
 
 const arkadia_audio = document.getElementById('arkadia_audio')
 const audio_mute = document.getElementById('audio_mute')
+const click_start_popup = document.querySelector('.click_start_popup')
 
 window.addEventListener('load', () => {
   laoder.classList.add('hide')
+
 })
 
 const playBgTheme = () => {
@@ -14,21 +16,27 @@ const playBgTheme = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   f1_logo_lg.classList.add('anim-fadeIn')
-  // playBgTheme()
+  playBgTheme()
 });
 
+click_start_popup.addEventListener('click', () => {
+  click_start_popup.classList.add('hide')
+  playBgTheme()
+
+})
 
 
-// audio_mute.addEventListener('click', () => {
-//   console.log(arkadia_audio.muted);
-//   arkadia_audio.muted ?
-//     (
-//       arkadia_audio.muted = false
-//     ) :
-//     (
-//       arkadia_audio.muted = true
-//     );
-// })
+
+audio_mute.addEventListener('click', () => {
+  console.log(arkadia_audio.muted);
+  if (arkadia_audio.muted) {
+    arkadia_audio.muted = false
+    audio_mute.classList.remove('muted')
+  } else {
+    arkadia_audio.muted = true
+    audio_mute.classList.add('muted')
+  }
+})
 
 
 //side menu
@@ -242,7 +250,7 @@ let frameSwap_4 = 5300;
 let frameSwap_5 = 7200;
 let frameSwap_6 = 8300;
 let frameSwap_7 = 9800;
-let frameSwap_8 = 10500;
+let frameSwap_8 = 10000;
 
 
 //navigation body section heights 
@@ -293,9 +301,7 @@ window.addEventListener('scroll', throttle(() => {
   scroll_y = window.scrollY;
 
   if (scroll_y > 0) {
-    // playBgTheme()
-
-
+    playBgTheme()
   }
   // console.log(scroll_y);
   // prgBar.style.height = `calc(100% - (${scroll_y} / ${bodyHeight} * 100%))`
@@ -616,17 +622,26 @@ window.addEventListener('scroll', throttle(() => {
       frame08.classList.remove('hide')
       frame08.classList.add('slide-fv')
 
-      if ((scroll_y + frameSwap_6) > 9500) {
+      if ((scroll_y + frameSwap_6) > 9550) {
+        frame07.style.transform = `translate(0%,-100%)`;
+        frame08.classList.remove('slide-fv')
+        frame08.classList.add('slide-fv-ended')
+
+      } else {
+        frame08.classList.add('slide-fv')
+        frame08.classList.remove('slide-fv-ended')
+
       }
     } else {
       frame07.style.transform = `translate(0, 0)`;
       frame08.classList.remove('slide-fv')
+      frame08.classList.remove('slide-fv-ended')
 
     }
 
   }
   if (frame_08 && scroll_y > frameSwap_7 + 150) {
-    console.log('view footer');
+    // console.log('view footer');
 
   }
 
