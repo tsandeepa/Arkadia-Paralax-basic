@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arkadia</title>
+  <link rel="icon" type="image/png" href="assets/images/faviocon.png" />
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/frames.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
@@ -152,6 +153,11 @@
   </div>
   <div class="menu-bg"></div>
 
+  <div class="click_start_popup">
+    <img src="assets/images/Mouse-Scroll.gif" alt="">
+    <p>Scrooll to view the experience.. </p>
+    <button>Ok</button>
+  </div>
 
   <div class="ak-mobile">
 
@@ -245,7 +251,8 @@
 
         <div class=" f6_if_box f6_iv_3 d-none">
           <h2>III</h2>
-          <p>Explore the theme park and it's mysteries alongside your friends</p>
+          <p>Try one of Arkadia attractions and earn $PARK tokens. Don't forget to have fun
+            while doing so</p>
         </div>
 
         <div class=" f6_if_box f6_iv_4 d-none">
@@ -277,6 +284,7 @@
 
 
   </div>
+
 
   <div class="ak-view">
     <section id="frame-01">
@@ -436,8 +444,15 @@
       <img src="assets/images/frame-06/Cloud_transition_1.png" id="f6_Untitled_Artwork_4">
       <div class="coaster-guide d-none">
         <div class="coaster-guide__start-over">
-          <h3>Continue...</h3>
-          <p>Click to continue.</p>
+          <div class="cgs_continue">
+            <h3>Continue...</h3>
+            <p>Click to continue.</p>
+          </div>
+          <!-- <div class="cgs_start">
+            <h3>Start Again</h3>
+            <p>Click to start.</p>
+          </div> -->
+
         </div>
         <div id="vsec_1" class="coaster-guide__sec coaster-guide__sec--1 d-none">
           <h2>I</h2>
@@ -463,6 +478,10 @@
 
 
 
+      </div>
+
+      <div class="ended-next-section hide">
+        <a href="#fv07">Go to next section...</a>
       </div>
 
       <div class="video_progress">
@@ -501,6 +520,13 @@
       <img src="assets/images/frame-07/f7-ground-3.png" alt="" id="f7_ground_3">
     </section>
 
+    <section id="frame-08-soon" class="hide">
+
+      <h2>Coming Soon</h2>
+      <button class="btn-img-md" id="btn_back_home">Back to Home</button>
+      <img class="f8_cs_image" src="assets/images/frame-08/soon.png" alt="">
+    </section>
+
     <section id="frame-08" class="hide slide-fv">
       <div class="foot-container">
         <img class="f8_foot_logo" src="assets/images/frame-01/text-logo.png" alt="">
@@ -530,32 +556,34 @@
 
     </section>
 
-    <section id=" frame-08-soon" class="hide">
 
-      <h2>Coming Soon</h2>
-      <button class="btn-img-md" id="btn_back_home">Back to Home</button>
-      <img class="f8_cs_image" src="assets/images/frame-08/soon.png" alt="">
-    </section>
 
 
 
 
   </div>
+  <button id="audio_mute"><img src="assets/images/footer/88147-equalizer.gif" alt=""></button>
 
   <footer>
-    <!-- <button id="audio_mute">Play</button> -->
     <ul>
       <li>
         <ul>
-          <li><a href="#" class="btn-link"> <img src="assets/images/sm-1.svg" alt=""></a></li>
-          <li><a href="#" class="btn-link"> <img src="assets/images/sm-2.svg" alt=""></a></li>
-          <li><a href="#" class="btn-link"> <img src="assets/images/sm-3.svg" alt=""></a></li>
-          <li><a href="#" class="btn-link"> <img src="assets/images/sm-4.svg" alt=""></a></li>
+          <!-- <li><a href="#" class="btn-link"> <img src="assets/images/sm-1.svg" alt=""></a>
+          </li>
+          <li><a href="E" class="btn-link"> <img src="assets/images/sm-2.svg" alt=""></a>
+          </li> -->
+          <li><a target="blank" href="https://arkadiapark.medium.com/" class="btn-link"> <img
+                src="assets/images/sm-3.svg" alt=""></a>
+          </li>
+          <li><a target="blank" href="https://twitter.com/arkadia_park" class="btn-link"> <img
+                src="assets/images/sm-4.svg" alt=""></a>
+          </li>
 
         </ul>
       </li>
       <li> <a href="#" class="btn-link lg-hide sm-show "><img src="assets/images/whitePaper.svg" alt=""></a></li>
-      <li><a href="#" class="btn-link"><img src="assets/images/discord 1.svg" alt=""></a></li>
+      <li><a target="blank" href="https://discord.com/invite/arkadiapark" class="btn-link"><img
+            src="assets/images/discord 1.svg" alt=""></a></li>
     </ul>
   </footer>
 

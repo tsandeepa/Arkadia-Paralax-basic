@@ -54,7 +54,7 @@
   }
   .sm-frame .sm-frame-text p {
     font-family: flanker;
-    font-size: 14px;
+    font-size: 16px;
     max-width: 80%;
     margin: 0 auto;
     line-height: 2;
@@ -141,12 +141,15 @@
     z-index: 1;
     top: 30%;
     left: 50%;
+    width: 75%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     text-align: center;
   }
   .sm-frame--06 .vp-view h4 {
     font-family: cinzel_bold;
+    font-size: 50px;
+    margin-bottom: 20px;
   }
   .sm-frame--06 .vp-view button {
     max-width: 300px;
@@ -159,7 +162,7 @@
   }
   .sm-frame--07 .sm-f7-bottom {
     position: absolute;
-    bottom: -14px;
+    bottom: -62px;
     width: 100%;
   }
   .mobile-footer {
