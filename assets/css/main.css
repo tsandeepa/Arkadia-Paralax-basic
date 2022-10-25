@@ -222,6 +222,8 @@ button img {
 .nav-menu__top > img {
   position: relative;
   top: 10px;
+  width: 100%;
+  max-width: 186px;
 }
 
 .nav-menu__top .btn-menu-close {
@@ -254,7 +256,7 @@ button img {
 .nav-menu__sec h4 {
   font-size: 24px;
   color: #FF7476;
-  font-family: flanker;
+  font-family: cinzel_bold;
 }
 
 .nav-menu__sec ul {
@@ -309,10 +311,12 @@ button img {
   width: 100%;
 }
 
-.nav-menu__sub-title {
+.nav-menu__sub-title a {
   font-size: 24px;
   color: #FF7476;
   font-family: flanker;
+  text-decoration: none;
+  font-family: cinzel_bold;
 }
 
 .nav-menu__footer {
@@ -1370,7 +1374,7 @@ section img {
 
 #audio_mute {
   position: fixed;
-  z-index: 14;
+  z-index: 30;
   bottom: 50px;
   left: 50px;
   border-radius: 50%;

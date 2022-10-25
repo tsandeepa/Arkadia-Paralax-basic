@@ -222,13 +222,13 @@ const view_coming_soon = document.querySelectorAll('.nav-menu__sec')
 const f8_coming_soon = document.getElementById('frame-08-soon')
 const btn_back_home = document.getElementById('btn_back_home')
 
-view_coming_soon.forEach((item) => {
-  item.addEventListener('click', () => {
-    sec_nav_right.classList.add('hide');
-    console.log(f8_coming_soon);
-    f8_coming_soon.classList.remove('hide')
-  })
-})
+// view_coming_soon.forEach((item) => {
+//   item.addEventListener('click', () => {
+//     sec_nav_right.classList.add('hide');
+//     console.log(f8_coming_soon);
+//     f8_coming_soon.classList.remove('hide')
+//   })
+// })
 
 
 
@@ -256,3 +256,11 @@ const observer = new IntersectionObserver(entries => {
 observer.observe(sm_footer)
 
 
+
+//mobile ritual event
+const sf_img_07_initial = document.querySelector('.sf-img-07-initial')
+const sm_f7_btn_ritual = document.getElementById('sm_f7_btn_ritual')
+
+sm_f7_btn_ritual.addEventListener('click', () => {
+  sf_img_07_initial.classList.toggle('sm-07-started')
+})

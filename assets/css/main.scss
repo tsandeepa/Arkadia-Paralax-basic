@@ -195,6 +195,8 @@ button {
     >img {
       position: relative;
       top: 10px;
+      width: 100%;
+      max-width: 186px;
     }
     .btn-menu-close {
       @include btn;
@@ -208,7 +210,7 @@ button {
     h4 {
       font-size: 24px;
       color: #FF7476;
-      font-family: flanker;
+      font-family: cinzel_bold;
     }
     ul {
       list-style: none;
@@ -262,9 +264,13 @@ button {
   }
 
   &__sub-title {
-    font-size: 24px;
-    color: #FF7476;
-    font-family: flanker;
+    a {
+      font-size: 24px;
+      color: #FF7476;
+      font-family: flanker;
+      text-decoration: none;
+      font-family: cinzel_bold;
+    }
   }
   &__footer {
     display: flex;
@@ -1113,7 +1119,7 @@ section img {
 
 #audio_mute {
   position: fixed;
-  z-index: 14;
+  z-index: 30;
   bottom: 50px;
   left: 50px;
   border-radius: 50%;
