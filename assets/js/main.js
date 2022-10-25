@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
 })
 
 const playBgTheme = () => {
+  arkadia_audio.volume = 0.08
   arkadia_audio.play()
   arkadia_audio.loop = true;
 }

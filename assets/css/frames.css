@@ -208,7 +208,7 @@
 .video_progress #vp_bar {
   background: #422b4c;
   display: block;
-  height: 7px;
+  height: 3px;
   max-width: 100%;
   border-radius: 50px;
   -webkit-transition: width 0.3s ease;
@@ -223,5 +223,15 @@
 
 .f7-ritual-started {
   opacity: 0 !important;
+}
+
+.sf-img-07-initial {
+  opacity: 1;
+  -webkit-transition: 5s ease;
+  transition: 5s ease;
+}
+
+.sm-07-started {
+  opacity: 0;
 }
 /*# sourceMappingURL=frames.css.map */
